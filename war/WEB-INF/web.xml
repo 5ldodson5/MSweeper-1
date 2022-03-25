@@ -11,6 +11,14 @@
     <servlet-class>servlet.StartPageServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>GuestServlet</servlet-name>
+    <servlet-class>servlet.GuestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SignInServlet</servlet-name>
+    <servlet-class>servlet.SignInServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>IndexServlet</servlet-name>
     <servlet-class>servlet.IndexServlet</servlet-class>
   </servlet>
@@ -34,6 +42,14 @@
   <servlet-mapping>
     <servlet-name>StartPageServlet</servlet-name>
     <url-pattern>/startPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GuestServlet</servlet-name>
+    <url-pattern>/guest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SignInServlet</servlet-name>
+    <url-pattern>/signIn</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>IndexServlet</servlet-name>
