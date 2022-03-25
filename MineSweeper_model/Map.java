@@ -65,7 +65,7 @@ public class Map{
 	public void placeNumbers() {
 		for(int k = 0; k<Map.length;k++) {
 			for(int z = 0; z<Map.length;k++) {
-				//i want to die...respectfully pls i
+				//i want to die...respectfully pls i just
 			}
 		}
 	}
