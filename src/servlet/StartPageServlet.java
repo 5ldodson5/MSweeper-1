@@ -16,6 +16,6 @@ public class StartPageServlet extends HttpServlet {
 		
 		System.out.println("Index Servlet: doGet");
 		
-		req.getRequestDispatcher("/_view/index.jsp").forward(req, resp);
+		req.getRequestDispatcher("/_view/startPage.jsp").forward(req, resp);
 	}
 }

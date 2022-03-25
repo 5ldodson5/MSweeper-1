@@ -46,7 +46,7 @@ public class Map{
 		
 		for(int height = 0; height < Map.length; height++) {
 			for(int length = 0; length < Map.length; length++) {
-				if(Map[height][length].isRevealed() && Map[height][length].getContains() == 9))
+				if(Map[height][length].isRevealed() && Map[height][length].getContains() == 9)
 					return true;
 			}
 		}
