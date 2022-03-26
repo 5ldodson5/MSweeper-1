@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import MineSweeper.controller.signInController;
+
 
 
 public class GuestServlet extends HttpServlet {
@@ -34,27 +36,27 @@ public class GuestServlet extends HttpServlet {
 		
 
 		try {
-			String guestName = getStringFromParameter(req.getParameter("Guest Name"));
+			String guestName = getStringFromParameter(req.getParameter("guestName"));
 			
 
 			// check for errors in the form data 
 			if (guestName == null) {
 				errorMessage = "Please Input a name";
 			}
-			/*else {
-				NumbersController controller = new NumbersController();
-				result = controller.add(first, second, third);
-			}*/
+			else {
+				signInController controller = new signInController();
+				result = controller.guestName(guestName);
+			}
 			
 		} catch (NumberFormatException e) {
 			errorMessage = "Invalid string";
 		}
 		
-		req.setAttribute("Guest Name", req.getParameter("Guest Name"));
+		req.setAttribute("guestName", req.getParameter("guestName"));
 		
 
 		req.setAttribute("errorMessage", errorMessage);
-		// req.setAttribute("Name of Guest", guestName); 
+		req.setAttribute("result", result); 
 		
 		req.getRequestDispatcher("/_view/guest.jsp").forward(req, resp);
 	}
