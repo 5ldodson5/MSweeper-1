@@ -25,7 +25,7 @@
 			<table>
 				<tr>
 					<td class="label">What is your name?:</td>
-					<td><input type="text" name="first" size="12" value="${guest.name}" /></td>
+					<td><input type="text" name="guestName" size="12" value="${guest.guestName}" /></td>
 				</tr>
 			</table>
 			<input type="Submit" name="submit" value="Guest name!">
