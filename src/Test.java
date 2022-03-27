@@ -1,8 +1,8 @@
-package main;
-
-
 public class Test{
 	public static void main(String[] args) throws Exception {
-		System.out.println("rawr");
+		ControllerMap testMap = new ControllerMap(10,10);
+		testMap.populateMap();
+		testMap.printMap();
+		
 	}
 }

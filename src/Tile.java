@@ -4,9 +4,9 @@ public class Tile{
 	private boolean isRevealed;
 	
 	public Tile(int x) {
-		contains = x;
-		hasFlag = false;
-		isRevealed = false;
+		this.contains = x;
+		this.hasFlag = false;
+		this.isRevealed = false;
 	}
 	
 	public int getContains() {

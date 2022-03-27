@@ -1,23 +1,75 @@
-import java.util.Random;
 
-public class Map{
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Random;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+public class ControllerMap extends JPanel{
 	private Tile[][] Map;
 	private int numBombs;
+	//jLabel for the entire game view
+	private JLabel statusbar;
+	//----------------------Variables that will be affected by HTML (Difficulty)---------------------------
+	private int sideSize;
+	//private int score;
+	//------------------------------Number variable translations-------------------------------------------
+	//private final int mine = 9;
+    //private final int coveredTile = 10;
+    //private final int flag = 11;
+    //private final int wrongFlag = 12;
+    //-----------------------------------------------------------------------------------------------------
+	
+	//private int Tilesize = 15; // size of each side of a tile in pixels
+    //private int boardWidth = sideSize * Tilesize + 1;
+    //private int boardHeight = sideSize * Tilesize + 1;
 	
 	
-	public Map(int size, int bombs) {
+	
+	private boolean gameStatus; //Flag variable for when to end the game
+
+	private Image[] imgMap; //stores all images to be displayed on game
+	
+	public ControllerMap(int size, int bombs) {
+		this.sideSize = size;
 		Map =  new Tile[size][size];
 		for(int k = 0; k< size; k++) {
-			for(int z = 0; k<size;k++) {
+			for(int z = 0; z<size;z++) {
 				Map[k][z] = new Tile(0);
+				
 			}
 		}
-		numBombs = bombs;
+		this.numBombs = bombs;
 	}
 	
-	public Map(Tile[][] x) {
-		Map = x;
-		numBombs = 4;
+	public ControllerMap(Tile[][] x) {
+		this.Map = x;
+		this.numBombs = 4;
+	}
+	
+	public ControllerMap(JLabel statusbar) {
+		this.statusbar = statusbar;
+        initBoard();
+	}
+
+	private void initBoard() {
+		setPreferredSize(new Dimension(sideSize, sideSize));
+
+        imgMap = new Image[13];
+
+        for (int i = 0; i < 13; i++) { 								//populating image map with .png pathway
+            String pathway = "src/resources/" + i + ".png";
+            imgMap[i] = (new ImageIcon(pathway)).getImage();
+        }
+        
+        addMouseListener(new mouseListener());
+        populateMap();
+		
 	}
 	
 	//returns array of Tiles
@@ -30,8 +82,6 @@ public class Map{
 	public void populateMap() {
 		this.placeBombs();
 		this.placeNumbers();
-		
-		
 	}
 	
 	public int getNumBombs() {
@@ -192,10 +242,16 @@ public class Map{
 				System.out.print(Map[row][col].getContains());
 				System.out.print("|");
 			}
-			for(int k = 0; k< Map.length; k++) {
-				System.out.print("--");
-			}
+			System.out.print("\n");
 		}
+	}
+	
+	private class mouseListener extends MouseAdapter{
+		
+	}
+	
+	public void paintComponent(Graphics g) {
+		
 	}
 	
 }
