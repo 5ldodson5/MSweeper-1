@@ -119,122 +119,56 @@ public class ControllerMap extends JPanel{
 	}
 	
 	public Tile[][] placeNumbers() {
-		int count;
-		//loops through entire map
-		for(int row = 0; row<Map.length;row++) {
-			for(int col = 0; col<Map.length;col++) {
-				if(Map[row][col].getContains() != 9) {
-					
-				count = 0;
-				//instance where the tile it's checking isn't on the edge
-				if(row != 0 && col!= 0 && row<Map.length-1 && col<Map.length-1) {
-					//loop through 8 tiles around
-					for(int subrow = row-1; subrow<row+1;subrow++ ) {
-						for(int subcol = col -1; subcol < col+1; subcol++) {
-							if(Map[subrow][subcol].getContains()== 9) {
-								count++;
-							}
-						}
-					}
-					Map[row][col].setContains(count);
-					//instance where tile is upper left corner
-				}else if(row == 0 && col == 0) {
-					//check three possible tiles
-					if(Map[0][1].getContains() == 9)
-						count++;
-					if(Map[1][0].getContains() == 9) 
-						count++;
-					if(Map[1][1].getContains() == 9)
-						count++;
-					
-					Map[0][0].setContains(count);
-					//instance where tile is upper right corner
-				}else if(row == 0 && col == Map.length-1) {
-					if(Map[0][Map.length-2].getContains() == 9)
-						count++;
-					if(Map[1][Map.length-2].getContains() == 9)
-						count++;
-					if(Map[1][Map.length-1].getContains() == 9)
-						count++;
-					
-					Map[0][Map.length-1].setContains(count);
-					//instance where tile is bottom left corner
-				}else if(col == 0 && row == Map.length-1) {
-					if(Map[Map.length-2][0].getContains() == 9)
-						count++;
-					if(Map[Map.length-2][1].getContains() == 9)
-						count++;
-					if(Map[Map.length-1][1].getContains() == 9)
-						count++;
-					Map[Map.length-1][0].setContains(count);
-					//instance where tile is bottom right;
-				}else if(col == Map.length-1 && row == Map.length -1) {
-					if(Map[Map.length-1][Map.length-2].getContains() == 9)
-						count++;
-					if(Map[Map.length-2][Map.length-1].getContains() == 9)
-						count++;
-					if(Map[Map.length-2][Map.length-2].getContains() == 9)
-						count++;
-					
-					Map[Map.length-1][Map.length-1].setContains(count);
-					//instance where tile is on left border 
-				}else if(col == 0) {
-					if(Map[row-1][0].getContains() == 9)
-						count++;
-					if(Map[row+1][0].getContains() == 9)
-						count++;
-					if(Map[row-1][1].getContains() == 9)
-						count++;
-					if(Map[row][1].getContains() == 9)
-						count++;
-					if(Map[row+1][1].getContains() == 9)
-						count++;
-					Map[row][col].setContains(count);
-					//instance where tile is on top border
-				}else if(row == 0) {
-					if(Map[0][col-1].getContains() == 9)
-						count++;
-					if(Map[0][col+1].getContains() == 9)
-						count++;
-					if(Map[1][col-1].getContains() == 9)
-						count++;
-					if(Map[1][col].getContains() == 9)
-						count++;
-					if(Map[1][col+1].getContains() == 9)
-						count++;
-					Map[row][col].setContains(count);
-					//instance where tile is on right border
-				}else if(col == Map.length-1) {
-					if(Map[row-1][Map.length-1].getContains() == 9)
-						count++;
-					if(Map[row+1][Map.length-1].getContains() == 9)
-						count++;
-					if(Map[row-1][Map.length-2].getContains() == 9)
-						count++;
-					if(Map[row][Map.length-2].getContains() == 9)
-						count++;
-					if(Map[row+1][Map.length-2].getContains() == 9)
-						count++;
-					Map[row][col].setContains(count);
-					//tile is on the bottom row
-				}else {
-					if(Map[Map.length-1][col-1].getContains() == 9)
-						count++;
-					if(Map[Map.length-1][col+1].getContains() == 9)
-						count++;
-					if(Map[Map.length-2][col-1].getContains() == 9)
-						count++;
-					if(Map[Map.length-2][col].getContains() == 9)
-						count++;
-					if(Map[Map.length-2][col+1].getContains() == 9)
-						count++;
-					Map[row][col].setContains(count);
-				}
-			}
-			}
-		}
-		return Map;
-	}
+		 for(int i = 0; i < Map.length; i++) { // This section then assigns each space of number based on the surrounding mines.
+	            for (int j = 0; j < Map.length; j++) {
+	                if (Map[i][j].getContains() != 9) {
+	                    int tempMines = 0;
+	                    if ((j - 1) != -1) {
+	                        if (Map[i][j - 1].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    if ((i - 1) != -1) {
+	                        if (Map[i - 1][j].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    if ((i - 1) != -1 && (j - 1) != -1) {
+	                        if (Map[i - 1][j - 1].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    if ((i - 1) != -1 && (j + 1) != Map.length) {
+	                        if (Map[i - 1][j + 1].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    if ((i + 1) != Map.length) {
+	                        if (Map[i + 1][j].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    if ((j + 1) != Map.length) {
+	                        if (Map[i][j + 1].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    if ((i + 1) != Map.length && (j + 1) != Map.length) {
+	                        if (Map[i + 1][j + 1].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    if ((i + 1) != Map.length && (j - 1) != -1) {
+	                        if (Map[i + 1][j - 1].getContains() == 9) {
+	                            tempMines += 1;
+	                        }
+	                    }
+	                    Map[i][j].setContains(tempMines);
+	                }
+	            }
+	        }
+	        return (Map);
+	    }
 	
 	public void printMap() {
 		for(int row = 0; row<Map.length; row++) {
@@ -243,8 +177,17 @@ public class ControllerMap extends JPanel{
 				System.out.print("|");
 			}
 			System.out.print("\n");
+			for(int k = 0; k< Map.length; k++) {
+				System.out.print("--");
+			}
+			System.out.print("\n");
 		}
 	}
+	
+
+
+//I hate git
+
 	
 	private class mouseListener extends MouseAdapter{
 		
@@ -256,4 +199,4 @@ public class ControllerMap extends JPanel{
 	
 }
 
-//I hate git
+//I hate git!
