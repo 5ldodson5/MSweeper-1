@@ -25,11 +25,11 @@
 			<table>
 				<tr>
 					<td class="label">Username:</td>
-					<td><input type="text" name="first" size="12" value="${signIn.username}" /></td>
+					<td><input type="text" name="username" size="12" value="${signIn.username}" /></td>
 				</tr>
 				<tr>
 					<td class="label">Password:</td>
-					<td><input type="text" name="second" size="12" value="${signIn.password}" /></td>
+					<td><input type="text" name="password" size="12" value="${signIn.password}" /></td>
 				</tr>
                 
 			</table>
