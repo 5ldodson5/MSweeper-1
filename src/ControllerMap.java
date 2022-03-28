@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 
 public class ControllerMap extends JPanel{
 	private Tile[][] Map;
+	private Tile[][] visableMap;
 	private int numBombs;
 	//jLabel for the entire game view
 	private JLabel statusbar;
@@ -24,24 +25,19 @@ public class ControllerMap extends JPanel{
     //private final int flag = 11;
     //private final int wrongFlag = 12;
     //-----------------------------------------------------------------------------------------------------
-	
-	//private int Tilesize = 15; // size of each side of a tile in pixels
-    //private int boardWidth = sideSize * Tilesize + 1;
-    //private int boardHeight = sideSize * Tilesize + 1;
-	
-	
-	
 	private boolean gameStatus; //Flag variable for when to end the game
 
 	private Image[] imgMap; //stores all images to be displayed on game
 	
+//----------------------------------------- Constructors ---------------------------------------------------
 	public ControllerMap(int size, int bombs) {
 		this.sideSize = size;
 		Map =  new Tile[size][size];
+		visableMap = new Tile[size][size];
 		for(int k = 0; k< size; k++) {
 			for(int z = 0; z<size;z++) {
 				Map[k][z] = new Tile(0);
-				
+				visableMap[k][z] = new Tile(-1);
 			}
 		}
 		this.numBombs = bombs;
@@ -54,39 +50,31 @@ public class ControllerMap extends JPanel{
 	
 	public ControllerMap(JLabel statusbar) {
 		this.statusbar = statusbar;
-        initBoard();
+        //initBoard();
 	}
-
+//---------------------------------------------------------------------------------------------------------
 	private void initBoard() {
 		setPreferredSize(new Dimension(sideSize, sideSize));
 
         imgMap = new Image[13];
 
-        for (int i = 0; i < 13; i++) { 								//populating image map with .png pathway
+        for (int i = 0; i < 13; i++) { 								//Not functional yet
             String pathway = "src/resources/" + i + ".png";
             imgMap[i] = (new ImageIcon(pathway)).getImage();
         }
         
-        addMouseListener(new mouseListener());
+        //addMouseListener(new mouseListener());
         populateMap();
 		
 	}
 	
-	//returns array of Tiles
-	public Tile[][] getMap() {
-		return Map;
-	}
 	
-	//populates the map. first places all the bombs and than goes back through to calculate
-	//what number a tile should contain
+	//populates the map. first places all the bombs and than goes back through to calculate what number a tile should contain
 	public void populateMap() {
 		this.placeBombs();
 		this.placeNumbers();
 	}
 	
-	public int getNumBombs() {
-		return numBombs;
-	}
 	
 	public boolean checkLose(){
 		
@@ -121,6 +109,7 @@ public class ControllerMap extends JPanel{
 	public Tile[][] placeNumbers() {
 		 for(int i = 0; i < Map.length; i++) { // This section then assigns each space of number based on the surrounding mines.
 	            for (int j = 0; j < Map.length; j++) {
+	            	
 	                if (Map[i][j].getContains() != 9) {
 	                    int tempMines = 0;
 	                    if ((j - 1) != -1) {
@@ -174,29 +163,70 @@ public class ControllerMap extends JPanel{
 		for(int row = 0; row<Map.length; row++) {
 			for(int col = 0; col < Map.length;col++) {
 				System.out.print(Map[row][col].getContains());
-				System.out.print("|");
+				System.out.print(" | ");
 			}
-			System.out.print("\n");
+			System.out.print("\n ");
 			for(int k = 0; k< Map.length; k++) {
 				System.out.print("--");
 			}
-			System.out.print("\n");
+			System.out.print("\n ");
 		}
 	}
 	
+	public void printVisableMap() {
+		for(int row = 0; row<visableMap.length; row++) {
+			for(int col = 0; col < visableMap.length;col++) {
+				System.out.print(visableMap[row][col].getContains());
+				System.out.print(" | ");
+			}
+			System.out.print("\n ");
+			for(int k = 0; k< visableMap.length; k++) {
+				System.out.print("-------");
+			}
+			System.out.print(" \n ");
+		}
+	}
+	//---------------------- Player input,info and Data ---------------------------
+	public int playerInteract(int inputRow, int inputColumn) {
 
-
-//I hate git
-
+		if (Map[inputRow][inputColumn].getContains() == 9) { //Player clicked on a mine
+			return 2;
+		}
+		else {
+	        	visableMap[inputRow][inputColumn].setContains(Map[inputRow][inputColumn].getContains()); //reveal what the player clicked on
+		}
+	    //checking for win, if not, continue game...
+		for (int i = 0; i< sideSize; i++) { 
+			for (int j = 0; j < sideSize; j++) {
+				if (Map[i][j].getContains() != 9) { //lose
+					if (visableMap[i][j].getContains() == Map[i][j].getContains()) {
+	                        visableMap[i][j] = visableMap[i][j];
+	                    }
+	                    else { //not lose
+	                        return 0;
+	                    }
+	                }
+	            }
+	        }
+	        return 1;
+	    }
 	
-	private class mouseListener extends MouseAdapter{
-		
+	//
+	
+	
+	//------------------------- GETTERS AND SETTERS--------------------------------
+	
+	public int getNumBombs() {
+		return numBombs;
+	}
+	public Tile[][] getMap() {
+		return Map;
+	}
+	public Tile[][] getVisibleMap(){
+		return visableMap;
 	}
 	
-	public void paintComponent(Graphics g) {
-		
-	}
 	
 }
 
-//I hate git!
+//I hate eclipse, respectfully of course
