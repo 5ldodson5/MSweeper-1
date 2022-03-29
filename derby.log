@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Mar 28 21:39:30 EDT 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-017f-d353-f8d3-000009203370 
+on database directory C:\Users\matth\git\MSweeper\test.db with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/matth/Documents/Code/Eclipse/CS320_Derby/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_301-b09
+user.dir=C:\Users\matth\git\MSweeper
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
