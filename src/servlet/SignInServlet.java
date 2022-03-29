@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import MineSweeper.controller.signInController;
+import MineSweeper.controller.highScoreController;
 
 public class SignInServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,6 +34,7 @@ public class SignInServlet extends HttpServlet {
 				String username = getStringFromParameter(req.getParameter("username"));
 				String password = getStringFromParameter(req.getParameter("password"));
 				
+				//System.out.println(username + ", " + password);
 
 				// check for errors in the form data 
 				if (username == null || password == null) {
@@ -41,6 +43,7 @@ public class SignInServlet extends HttpServlet {
 				else {
 					signInController controller = new signInController();
 					result = controller.checkUser(username, password);
+					//System.out.println(result);
 				}
 				
 			} catch (NumberFormatException e) {
@@ -54,7 +57,20 @@ public class SignInServlet extends HttpServlet {
 			req.setAttribute("errorMessage", errorMessage);
 			req.setAttribute("whetherGuestExists", result); 
 			
-			req.getRequestDispatcher("/_view/signIn.jsp").forward(req, resp);
+			if(result == true) {
+				req.setAttribute("userName", req.getParameter("username"));
+				highScoreController highScores = new highScoreController();
+				try {
+					req=highScores.addHighScore(req);
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				req.getRequestDispatcher("/_view/index.jsp").forward(req, resp);
+			}
+			else {
+				req.getRequestDispatcher("/_view/signIn.jsp").forward(req, resp);
+			}
 		}
 
 		private String getStringFromParameter(String s) {
