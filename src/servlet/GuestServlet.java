@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import MineSweeper.controller.signInController;
-
+import MineSweeper.controller.highScoreController;
 
 
 public class GuestServlet extends HttpServlet {
@@ -34,6 +34,8 @@ public class GuestServlet extends HttpServlet {
 
 		String result = null;
 		
+		Boolean validName = false;
+		
 
 		try {
 			String guestName = getStringFromParameter(req.getParameter("guestName"));
@@ -46,19 +48,32 @@ public class GuestServlet extends HttpServlet {
 			else {
 				signInController controller = new signInController();
 				result = controller.guestName(guestName);
+				validName = true;
 			}
 			
 		} catch (NumberFormatException e) {
 			errorMessage = "Invalid string";
 		}
 		
-		req.setAttribute("guestName", req.getParameter("guestName"));
+		req.setAttribute("userName", req.getParameter("guestName"));
 		
 
 		req.setAttribute("errorMessage", errorMessage);
 		req.setAttribute("result", result); 
 		
-		req.getRequestDispatcher("/_view/guest.jsp").forward(req, resp);
+		if(validName==true) {
+			highScoreController controller = new highScoreController();
+			try {
+				req=controller.addHighScore(req);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			req.getRequestDispatcher("/_view/index.jsp").forward(req, resp);
+		}
+		else {
+			req.getRequestDispatcher("/_view/guest.jsp").forward(req, resp);
+		}
 	}
 
 	private String getStringFromParameter(String s) {
@@ -69,5 +84,3 @@ public class GuestServlet extends HttpServlet {
 		}
 	}
 }
-
-
