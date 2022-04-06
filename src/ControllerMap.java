@@ -34,15 +34,18 @@ public class ControllerMap extends JPanel{
 		this.sideSize = size;
 		Map =  new Tile[size][size];
 		visableMap = new Tile[size][size];
+		
 		for(int k = 0; k< size; k++) {
 			for(int z = 0; z<size;z++) {
+				
 				Map[k][z] = new Tile(0);
 				visableMap[k][z] = new Tile(-1);
+				
 			}
 		}
 		this.numBombs = bombs;
 	}
-	
+	//JUnit test case
 	public ControllerMap(Tile[][] x) {
 		this.Map = x;
 		this.numBombs = 4;
@@ -88,7 +91,9 @@ public class ControllerMap extends JPanel{
 		return false;
 	}
 	
-	public void placeBombs() {
+	public int placeBombs() {
+		//Populates map with bombs, returns the number of bombs on the map
+		
 		Random rand = new Random();
 		int count = 0;
 		int x,y;
@@ -104,13 +109,17 @@ public class ControllerMap extends JPanel{
 				count++;
 			}
 		}
+		
+		return count;
 	}
 	
 	public Tile[][] placeNumbers() {
+		// i = row
+		// j = column
 		 for(int i = 0; i < Map.length; i++) { // This section then assigns each space of number based on the surrounding mines.
 	            for (int j = 0; j < Map.length; j++) {
 	            	
-	                if (Map[i][j].getContains() != 9) {
+	                if (Map[i][j].getContains() != 9) { // not equal to bomb
 	                    int tempMines = 0;
 	                    if ((j - 1) != -1) {
 	                        if (Map[i][j - 1].getContains() == 9) {
@@ -137,6 +146,7 @@ public class ControllerMap extends JPanel{
 	                            tempMines += 1;
 	                        }
 	                    }
+	                    //
 	                    if ((j + 1) != Map.length) {
 	                        if (Map[i][j + 1].getContains() == 9) {
 	                            tempMines += 1;
