@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5"
-         xmlns="http://java.sun.com/xml/ns/javaee">
+         xmlns="http://JAVA.sun.com/xml/ns/javaee">
 
   <!-- Servlets -->
   <servlet>
@@ -17,6 +17,10 @@
   <servlet>
     <servlet-name>SignInServlet</servlet-name>
     <servlet-class>servlet.SignInServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>servlet.SignUpServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>IndexServlet</servlet-name>
@@ -50,6 +54,10 @@
   <servlet-mapping>
     <servlet-name>SignInServlet</servlet-name>
     <url-pattern>/signIn</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/signUp</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>IndexServlet</servlet-name>
