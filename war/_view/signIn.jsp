@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td class="label">Password:</td>
-					<td><input type="text" name="password" size="12" value="${signIn.password}" /></td>
+					<td><input type="password" name="password" size="12" value="${signIn.password}" /></td>
 				</tr>
                 
 			</table>
