@@ -26,11 +26,15 @@
 		<form action="${pageContext.servletContext.contextPath}/guest" method="post">
 			<table>
 				<tr>
-					<td class="label">What is your name?:</td>
-					<td><input type="text" name="guestName" size="12" value="${guest.guestName}" /></td>
+					<center><td class="label">What is your name?:</td></center>
+					<center><td><input type="text" name="guestName" size="12" value="${guest.guestName}" /></td></center>
 				</tr>
+                 
 			</table>
 			<input type="Submit" name="submit" value="Guest name!">
 		</form>
+        <br>
+		          <a href="http://localhost:8081/MineSweeper/signUp"><h3>There's still time to make an account!!</h3> </a>
+                <br>
 	</body>
 </html>

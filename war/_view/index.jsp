@@ -15,7 +15,7 @@
 			${userName}!
 		</c:if>
 		</center></h1>
-        
+        <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
         <br>
 		<center><a href="http://localhost:8081/MineSweeper/easy"><h3>EASY DIFFICULTY!</h3> </a></center>
         <br>
@@ -40,6 +40,7 @@
             
         <div class="carousel-inner" role="listbox">
             <div class="item active">
+                
             <h2>EASY!</h2>
             <h3><center>1. ${userOne}</center></h3>
         <h3><center>${timeOne} Seconds</center></h3>
@@ -81,6 +82,7 @@
         <h3><center>${timeFive} Seconds</center></h3>
             </div>
           </div>
+            
          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>

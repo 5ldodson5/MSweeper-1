@@ -31,11 +31,11 @@
 				</tr>
 				<tr>
 					<td class="label">Password:</td>
-					<td><input type="text" name="password" size="12" value="${signUp.password}" /></td>
+					<td><input type="password" name="password" size="12" value="${signUp.password}" /></td>
 				</tr>
                 <tr>
-					<td class="label">Password:</td>
-					<td><input type="text" name="passwordCheck" size="12" value="${signUp.passwordCheck}" /></td>
+					<td class="label">Enter Password Again:</td>
+					<td><input type="password" name="passwordCheck" size="12" value="${signUp.passwordCheck}" /></td>
 				</tr>
                 
 			</table>
