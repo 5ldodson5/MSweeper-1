@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.http.HttpServletRequest;
+import MineSweeper.derby.DerbyDatabase;
 
 
 //Once the Derby project has been added, this should work. For now, this works through a reference to my local files.
@@ -16,15 +17,25 @@ public class highScoreController {
 		Connection conn = null;
 		try {
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-			conn = DriverManager.getConnection("jdbc:derby:test.db;create=true");
+			//conn = DriverManager.getConnection("jdbc:derby:test.db;create=true");
+			conn = DriverManager.getConnection("jdbc:derby:C:/Users/matth/Documents/Code/library.db;create=true");
+			//IMPORTANT: Change the folder name before running the code. I cannot put the database in the project folder as git doesn't like to do anything convenient.
+			//DO NOT put the database in the folder
 			
 			//If the database needs to be cleared.
 			//String delsql = "DROP TABLE highscores";
 			Statement stmt = conn.createStatement();
 			//stmt.execute(delsql);
+			String sql = null;
+			
+			sql = "SELECT * FROM highScores "
+			
+			
+			
+			
 			
 			//Creates fake database.
-			String sql = "CREATE TABLE highscores (id int, username varchar(30), score int, PRIMARY KEY(id))";
+			//String sql = "CREATE TABLE highscores (id int, username varchar(30), score int, PRIMARY KEY(id))";
 			
 			//stmt.execute(sql);
 			
