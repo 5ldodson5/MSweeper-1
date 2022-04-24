@@ -28,7 +28,7 @@ public class highScoreController {
 			//stmt.execute(delsql);
 			String sql = null;
 			
-			sql = "SELECT * FROM highScores "
+			sql = "SELECT * FROM highScores ";
 			
 			
 			
