@@ -36,9 +36,7 @@ public class SignUpServlet extends HttpServlet {
 				String password = getStringFromParameter(req.getParameter("password"));
 				String passwordCheck = getStringFromParameter(req.getParameter("passwordCheck"));
 				
-				//System.out.println(username + ", " + password);
 
-				// check for errors in the form data 
 				if (username == null || password == null) {
 					errorMessage = "Invalid username or password";
 				}
