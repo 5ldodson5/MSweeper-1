@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
+import MineSweeper.db.model.HighScore;
+import MineSweeper.db.model.User;
 import javax.servlet.http.HttpServletRequest;
 import MineSweeper.derby.DerbyDatabase;
 
@@ -14,6 +17,24 @@ import MineSweeper.derby.DerbyDatabase;
 //-Matt
 public class highScoreController {
 	public HttpServletRequest addHighScore(HttpServletRequest req) throws ClassNotFoundException {
+		
+		DerbyDatabase derbyDB = new DerbyDatabase();
+		List<HighScore> highScores;
+		highScores = derbyDB.findAllHighScoresByDifficulty("Easy");
+		
+		req.setAttribute("userOne", highScores.get(0).getUsername());
+		req.setAttribute("userTwo", highScores.get(1).getUsername());
+		req.setAttribute("userThree", highScores.get(2).getUsername());
+		req.setAttribute("userFour", highScores.get(3).getUsername());
+		req.setAttribute("userFive", highScores.get(4).getUsername());
+		
+		req.setAttribute("timeOne", highScores.get(0).getScore());
+		req.setAttribute("timeTwo", highScores.get(1).getScore());
+		req.setAttribute("timeThree", highScores.get(2).getScore());
+		req.setAttribute("timeFour", highScores.get(3).getScore());
+		req.setAttribute("timeFive", highScores.get(4).getScore());
+		
+		/*
 		Connection conn = null;
 		try {
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
@@ -94,6 +115,7 @@ public class highScoreController {
 				// ignore
 			}
 		}
+		*/
 		return req;
 	}
 }

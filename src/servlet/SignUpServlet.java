@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import MineSweeper.derby.DerbyDatabase;
+
 import MineSweeper.controller.signInController;
 import MineSweeper.controller.signUpController;
 import MineSweeper.controller.highScoreController;
