@@ -140,4 +140,21 @@ public class ControllerMapTest {
 		}
 	}
 	
+	@Test
+	public void testWin() throws Exception {
+		for(int row = 0; row<5;row++) {
+			for(int col = 0; col<5;col++) {
+				if(Apreset[row][col].getContains() == 9) {
+					Apreset[row][col].placeFlag();
+				}else {
+					Apreset[row][col].reveal();
+				}
+			}
+		}
+		
+		ControllerMap test = new ControllerMap(Apreset);
+		assertEquals(test.win(), true);
+		assertEquals(AMpreset.win(),true);
+	}
+	
 }

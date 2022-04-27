@@ -196,6 +196,27 @@ public class ControllerMap extends JPanel{
 			System.out.print(" \n ");
 		}
 	}
+	
+public boolean win() {
+		
+		boolean temp = true;
+		for(int row = 0; row<Map.length; row++) {
+			for(int col = 0; col < Map.length;col++) {
+				if(Map[row][col].getContains()==9) {
+					if(Map[row][col].getFlag() == false)
+						temp = false;
+				}else {
+					if(Map[row][col].isRevealed()== false) {
+						temp = false;
+					}
+				}
+				
+			}
+			}
+		return temp;
+	}
+
+
 	//---------------------- Player input,info and Data ---------------------------
 	public int playerInteract(int inputRow, int inputColumn) {
 
