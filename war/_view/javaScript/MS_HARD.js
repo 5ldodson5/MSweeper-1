@@ -1,94 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-	<head>
-		<title>EASY GAME</title>
-        <meta charset="UTF-8">
-    
-	<body>
-<label id="minutes">00</label>
-<label id="colon">:</label>
-<label id="seconds">00</label>
-    <script type="text/javascript">
-        var minutesLabel = document.getElementById("minutes");
-        var secondsLabel = document.getElementById("seconds");
-        var totalSeconds = 0;
-        setInterval(setTime, 1000);
-
-        function setTime()
-        {
-            ++totalSeconds;
-            secondsLabel.innerHTML = pad(totalSeconds%60);
-            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
-        }
-
-        function pad(val)
-        {
-            var valString = val + "";
-            if(valString.length < 2)
-            {
-                return "0" + valString;
-            }
-            else
-            {
-                return valString;
-            }
-        }
-    </script>
-<script type="text/javascript">
-        var minutesLabel = document.getElementById("minutes");
-        var secondsLabel = document.getElementById("seconds");
-        var totalSeconds = 0;
-        setInterval(setTime, 1000);
-
-        function setTime()
-        {
-            ++totalSeconds;
-            secondsLabel.innerHTML = pad(totalSeconds%60);
-            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
-        }
-
-        function pad(val)
-        {
-            var valString = val + "";
-            if(valString.length < 2)
-            {
-                return "0" + valString;
-            }
-            else
-            {
-                return valString;
-            }
-        }
-    
-    
-    
-    </script>
-    
-    <style>
-        .grid{
-        height: 400px;
-        width: 400px;
-        display:flex;
-        flex-wrap: wrap;
-        background-color: grey;
-        }
-    .grid div{
-        height: 50px;
-        width: 50px;
-        }
-
-    .checked{
-        background-color: lightgrey;
-        }
-
-
-    .bomb{
-        background-color: gray;
-        }
-    </style>
-    <script type = "text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     /*
         Variables that are important to note:
@@ -96,8 +6,8 @@
             NOTE: size is connected to the height&width in the style.css
         
     */
-    let size = 8
-    let numBombs = 10
+    let size = 12
+    let numBombs = 30
     let numflags = 0
     let map = []
     let isGameOver = false
@@ -306,14 +216,4 @@
     }
                           
                           
-    })
-        
-    </script>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class = "grid"></div>
-        
-	</body>
-</html>
+})
