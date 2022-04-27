@@ -5,26 +5,58 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
+import MineSweeper.db.model.HighScore;
+import MineSweeper.db.model.User;
 import javax.servlet.http.HttpServletRequest;
+import MineSweeper.derby.DerbyDatabase;
 
 
 //Once the Derby project has been added, this should work. For now, this works through a reference to my local files.
 //-Matt
 public class highScoreController {
 	public HttpServletRequest addHighScore(HttpServletRequest req) throws ClassNotFoundException {
+		
+		DerbyDatabase derbyDB = new DerbyDatabase();
+		List<HighScore> highScores;
+		highScores = derbyDB.findAllHighScoresByDifficulty("Easy");
+		
+		req.setAttribute("userOne", highScores.get(0).getUsername());
+		req.setAttribute("userTwo", highScores.get(1).getUsername());
+		req.setAttribute("userThree", highScores.get(2).getUsername());
+		req.setAttribute("userFour", highScores.get(3).getUsername());
+		req.setAttribute("userFive", highScores.get(4).getUsername());
+		
+		req.setAttribute("timeOne", highScores.get(0).getScore());
+		req.setAttribute("timeTwo", highScores.get(1).getScore());
+		req.setAttribute("timeThree", highScores.get(2).getScore());
+		req.setAttribute("timeFour", highScores.get(3).getScore());
+		req.setAttribute("timeFive", highScores.get(4).getScore());
+		
+		/*
 		Connection conn = null;
 		try {
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-			conn = DriverManager.getConnection("jdbc:derby:test.db;create=true");
+			//conn = DriverManager.getConnection("jdbc:derby:test.db;create=true");
+			conn = DriverManager.getConnection("jdbc:derby:C:/Users/matth/Documents/Code/library.db;create=true");
+			//IMPORTANT: Change the folder name before running the code. I cannot put the database in the project folder as git doesn't like to do anything convenient.
+			//DO NOT put the database in the folder
 			
 			//If the database needs to be cleared.
 			//String delsql = "DROP TABLE highscores";
 			Statement stmt = conn.createStatement();
 			//stmt.execute(delsql);
+			String sql = null;
+			
+			sql = "SELECT * FROM highScores ";
+			
+			
+			
+			
 			
 			//Creates fake database.
-			String sql = "CREATE TABLE highscores (id int, username varchar(30), score int, PRIMARY KEY(id))";
+			//String sql = "CREATE TABLE highscores (id int, username varchar(30), score int, PRIMARY KEY(id))";
 			
 			//stmt.execute(sql);
 			
@@ -83,6 +115,7 @@ public class highScoreController {
 				// ignore
 			}
 		}
+		*/
 		return req;
 	}
 }
