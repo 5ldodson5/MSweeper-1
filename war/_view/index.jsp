@@ -42,44 +42,44 @@
             <div class="item active">
                 
             <h2>EASY!</h2>
-            <h3><center>1. ${userOne}</center></h3>
-        <h3><center>${timeOne} Seconds</center></h3>
-        <h3><center>2. ${userTwo}</center></h3>
-        <h3><center>${timeTwo} Seconds</center></h3>
-        <h3><center>3. ${userThree}</center></h3>
-        <h3><center>${timeThree} Seconds</center></h3>
-        <h3><center>4. ${userFour}</center></h3>
-        <h3><center>${timeFour} Seconds</center></h3>
-        <h3><center>5. ${userFive}</center></h3>
-        <h3><center>${timeFive} Seconds</center></h3>
+            <h3><center>1. ${userOneEasy}</center></h3>
+        <h3><center>${timeOneEasy} Seconds</center></h3>
+        <h3><center>2. ${userTwoEasy}</center></h3>
+        <h3><center>${timeTwoEasy} Seconds</center></h3>
+        <h3><center>3. ${userThreeEasy}</center></h3>
+        <h3><center>${timeThreeEasy} Seconds</center></h3>
+        <h3><center>4. ${userFourEasy}</center></h3>
+        <h3><center>${timeFourEasy} Seconds</center></h3>
+        <h3><center>5. ${userFiveEasy}</center></h3>
+        <h3><center>${timeFiveEasy} Seconds</center></h3>
             </div>
             
             <div class="item">
                 <h2>MEDIUM!</h2>
-            <h3><center>1. ${userOne}</center></h3>
-        <h3><center>${timeOne} Seconds</center></h3>
-        <h3><center>2. ${userTwo}</center></h3>
-        <h3><center>${timeTwo} Seconds</center></h3>
-        <h3><center>3. ${userThree}</center></h3>
-        <h3><center>${timeThree} Seconds</center></h3>
-        <h3><center>4. ${userFour}</center></h3>
-        <h3><center>${timeFour} Seconds</center></h3>
-        <h3><center>5. ${userFive}</center></h3>
-        <h3><center>${timeFive} Seconds</center></h3>
+            <h3><center>1. ${userOneMedium}</center></h3>
+        <h3><center>${timeOneMedium} Seconds</center></h3>
+        <h3><center>2. ${userTwoMedium}</center></h3>
+        <h3><center>${timeTwoMedium} Seconds</center></h3>
+        <h3><center>3. ${userThreeMedium}</center></h3>
+        <h3><center>${timeThreeMedium} Seconds</center></h3>
+        <h3><center>4. ${userFourMedium}</center></h3>
+        <h3><center>${timeFourMedium} Seconds</center></h3>
+        <h3><center>5. ${userFiveMedium}</center></h3>
+        <h3><center>${timeFiveMedium} Seconds</center></h3>
             </div>
             
             <div class="item">
                 <h2>HARD!</h2>
-            <h3><center>1. ${userOne}</center></h3>
-        <h3><center>${timeOne} Seconds</center></h3>
-        <h3><center>2. ${userTwo}</center></h3>
-        <h3><center>${timeTwo} Seconds</center></h3>
-        <h3><center>3. ${userThree}</center></h3>
-        <h3><center>${timeThree} Seconds</center></h3>
-        <h3><center>4. ${userFour}</center></h3>
-        <h3><center>${timeFour} Seconds</center></h3>
-        <h3><center>5. ${userFive}</center></h3>
-        <h3><center>${timeFive} Seconds</center></h3>
+        <h3><center>1. ${userOneHard}</center></h3>
+        <h3><center>${timeOneHard} Seconds</center></h3>
+        <h3><center>2. ${userTwoHard}</center></h3>
+        <h3><center>${timeTwoHard} Seconds</center></h3>
+        <h3><center>3. ${userThreeHard}</center></h3>
+        <h3><center>${timeThreeHard} Seconds</center></h3>
+        <h3><center>4. ${userFourHard}</center></h3>
+        <h3><center>${timeFourHard} Seconds</center></h3>
+        <h3><center>5. ${userFiveHard}</center></h3>
+        <h3><center>${timeFiveHard} Seconds</center></h3>
             </div>
           </div>
             

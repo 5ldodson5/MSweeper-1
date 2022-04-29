@@ -40,7 +40,7 @@ public class SQLDemo {
 
 	
 	// TODO: Here is where you name and specify the location of your Derby SQL database
-	// TODO: Change it here and in DerbyDatabase.java under CS320_LibraryExample_Lab06->edu.ycp.cs320.booksdb.persist
+	// TODO: Change it here and in DerbyDatabase.java
 	// TODO: DO NOT PUT THE DB IN THE SAME FOLDER AS YOUR PROJECT - that will cause conflicts later w/Git
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		Connection conn = null;
