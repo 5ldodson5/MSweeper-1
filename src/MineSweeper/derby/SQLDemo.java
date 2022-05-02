@@ -46,7 +46,8 @@ public class SQLDemo {
 		Connection conn = null;
 		try {
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-			conn = DriverManager.getConnection("jdbc:derby:C:/Users/matth/Documents/Code/library.db;create=true");
+			//Just change your user aspect and it will create everything you need after you run it
+			conn = DriverManager.getConnection("jdbc:derby:C:/Users/bobby/Documents/Code/library.db;create=true");
 			conn.setAutoCommit(true);
 	
 			queryLoop(conn);
