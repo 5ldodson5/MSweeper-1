@@ -22,31 +22,28 @@ body {
     
     <body>
         
-        <h1><center>CHOOSE YOUR DIFFICULTY
+        <h1><center><p style="color: white;">CHOOSE YOUR DIFFICULTY
         <c:if test="${! empty userName}">
-			${userName}!
+            ${userName}!
 		</c:if>
-		</center></h1>
+		</p></center></h1>
         <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
         <br>
 		<!--<center><a href="http://localhost:8081/MineSweeper/easy"><h3>EASY DIFFICULTY!</h3> </a></center>-->
-        <a href="http://localhost:8081/MineSweeper/easy">
-        <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rectangular_green_flag.svg/1200px-Rectangular_green_flag.svg.png" alt="Easy Game" style="width:90px;height:45px;"></center>
+        <center><a href="http://localhost:8081/MineSweeper/easy" target="_parent"><button>_EASY GAME!_</button></a></center>
+       
         <br>
-        </a>
+     
       
-        <a href="http://localhost:8081/MineSweeper/medium">
-        <center><img src="https://www.pmi.com/resources/images/default-source/our-initiatives/yellow-rectangle.png?sfvrsn=db4be4b4_2&imwidth=320&imdensity=1" alt="Medium Game" style="width:90px;height:45px;"></center>
-        </a>
+        <center><a href="http://localhost:8081/MineSweeper/medium" target="_parent"><button>MEDIUM GAME!</button></a></center>
+        <br> 
+        <center><a href="http://localhost:8081/MineSweeper/hard" target="_parent"><button> _HARD GAME!_</button></a></center>
         
-        <a href="http://localhost:8081/MineSweeper/hard">
-        <center><img src="https://www.downloadclipart.net/large/21606-kw-red-rectangle-button-panel-design.png" alt="Hard Game" style="width:90px;height:90px;"></center>
-        </a>
         
         <br>
         <br>
 
-        <h1><center>Leaderboards!</center></h1>
+        <h1><center><p style="color:white;">Leaderboards!</p></center></h1>
         <br>
         <br>
         
@@ -61,45 +58,45 @@ body {
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 
-            <h2>EASY!</h2>
-            <h3><center>1. ${userOne}</center></h3>
-        <h3><center>${timeOne} Seconds</center></h3>
-        <h3><center>2. ${userTwo}</center></h3>
-        <h3><center>${timeTwo} Seconds</center></h3>
-        <h3><center>3. ${userThree}</center></h3>
-        <h3><center>${timeThree} Seconds</center></h3>
-        <h3><center>4. ${userFour}</center></h3>
-        <h3><center>${timeFour} Seconds</center></h3>
-        <h3><center>5. ${userFive}</center></h3>
-        <h3><center>${timeFive} Seconds</center></h3>
+            <h2><p style="color: white;">EASY!</p></h2>
+            <h3><center><p style="color:white;">1. ${userOne}</p></center></h3>
+            <h3><center><p style="color: white;">${timeOne} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">2. ${userTwo}</p></center></h3>
+            <h3><center><p style="color: white;">${timeTwo} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">3. ${userThree}</p></center></h3>
+            <h3><center><p style="color:white;">${timeThree} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">4. ${userFour}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFour} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">5. ${userFive}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFive} Seconds</p></center></h3>
             </div>
             
             <div class="item">
-                <h2>MEDIUM!</h2>
-            <h3><center>1. ${userOne}</center></h3>
-        <h3><center>${timeOne} Seconds</center></h3>
-        <h3><center>2. ${userTwo}</center></h3>
-        <h3><center>${timeTwo} Seconds</center></h3>
-        <h3><center>3. ${userThree}</center></h3>
-        <h3><center>${timeThree} Seconds</center></h3>
-        <h3><center>4. ${userFour}</center></h3>
-        <h3><center>${timeFour} Seconds</center></h3>
-        <h3><center>5. ${userFive}</center></h3>
-        <h3><center>${timeFive} Seconds</center></h3>
+             <h2><p style="color: white;">MEDIUM!</p></h2>
+            <h3><center><p style="color:white;">1. ${userOne}</p></center></h3>
+            <h3><center><p style="color: white;">${timeOne} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">2. ${userTwo}</p></center></h3>
+            <h3><center><p style="color: white;">${timeTwo} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">3. ${userThree}</p></center></h3>
+            <h3><center><p style="color:white;">${timeThree} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">4. ${userFour}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFour} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">5. ${userFive}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFive} Seconds</p></center></h3>
             </div>
             
             <div class="item">
-                <h2>HARD!</h2>
-            <h3><center>1. ${userOne}</center></h3>
-        <h3><center>${timeOne} Seconds</center></h3>
-        <h3><center>2. ${userTwo}</center></h3>
-        <h3><center>${timeTwo} Seconds</center></h3>
-        <h3><center>3. ${userThree}</center></h3>
-        <h3><center>${timeThree} Seconds</center></h3>
-        <h3><center>4. ${userFour}</center></h3>
-        <h3><center>${timeFour} Seconds</center></h3>
-        <h3><center>5. ${userFive}</center></h3>
-        <h3><center>${timeFive} Seconds</center></h3>
+             <h2><p style="color: white;">HARD!</p></h2>
+            <h3><center><p style="color:white;">1. ${userOne}</p></center></h3>
+            <h3><center><p style="color: white;">${timeOne} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">2. ${userTwo}</p></center></h3>
+            <h3><center><p style="color: white;">${timeTwo} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">3. ${userThree}</p></center></h3>
+            <h3><center><p style="color:white;">${timeThree} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">4. ${userFour}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFour} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">5. ${userFive}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFive} Seconds</p></center></h3>
             </div>
           </div>
             
