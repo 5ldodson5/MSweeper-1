@@ -7,6 +7,10 @@
 	</head>
 
 	<body>
+        <a href="http://localhost:8081/MineSweeper/index"><h3>GO BACK!</h3> </a>
+        <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
+        <br>
+        
 <label id="minutes">00</label>
 <label id="colon">:</label>
 <label id="seconds">00</label>

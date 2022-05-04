@@ -6,6 +6,14 @@
         <meta charset="UTF-8">
     
 	<body>
+        <a href="http://localhost:8081/MineSweeper/index"><h3>GO BACK!</h3> </a>
+        <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
+        <br>
+        <c:if test="${! empty userName}">
+			${userName}!
+		</c:if>
+        <br>
+        <br>
 <label id="minutes">00</label>
 <label id="colon">:</label>
 <label id="seconds">00</label>
