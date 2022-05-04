@@ -1,46 +1,16 @@
 <!DOCTYPE html>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <html>
 	<head>
 		<title>MEDIUM GAME</title>
-	</head>
-
+        <meta charset="UTF-8">
+    
 	<body>
         <a href="http://localhost:8081/MineSweeper/index"><h3>GO BACK!</h3> </a>
         <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
         <br>
-        
-<label id="minutes">00</label>
-<label id="colon">:</label>
-<label id="seconds">00</label>
-    <script type="text/javascript">
-        var minutesLabel = document.getElementById("minutes");
-        var secondsLabel = document.getElementById("seconds");
-        var totalSeconds = 0;
-        setInterval(setTime, 1000);
-
-        function setTime()
-        {
-            ++totalSeconds;
-            secondsLabel.innerHTML = pad(totalSeconds%60);
-            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
-        }
-
-        function pad(val)
-        {
-            var valString = val + "";
-            if(valString.length < 2)
-            {
-                return "0" + valString;
-            }
-            else
-            {
-                return valString;
-            }
-        }
-    </script>
-           <style>
+<div id="timer"></div>
+    <style>
         .grid{
         height: 500px;
         width: 500px;
@@ -52,14 +22,11 @@
         height: 50px;
         width: 50px;
         }
-
     .checked{
         background-color: lightgrey;
         }
-
-
     .bomb{
-        background-color: gray;
+        background-color: blue;
         }
     </style>
     <script type = "text/javascript">
@@ -72,11 +39,14 @@
         
     */
     let size = 10
-    let numBombs = 20
+    let numBombs = 25
     let numflags = 0
     let map = []
     let isGameOver = false
-    
+    let isGameWon = false
+    let playerScore = 0
+    var timerVar = setInterval(countTimer, 1000);
+    var totalSeconds = 0;
     /*
         There are several changes I made to our code when moving it to javascript:
         - The visable and hidden maps no longer exist. It was far more efficient to store 'bomb' and 'safe'
@@ -86,6 +56,37 @@
         - 
         
     */
+    
+    //================================ WIN CONDITION =========================================
+    function checkWin(){
+        let correctFlags = 0
+        for(let i = 0; i<map.length; i++){
+            if(map[i].classList.contains('flag') && map[i].classList.contains('bomb')){
+                correctFlags++
+            }
+            if(correctFlags === numBombs){
+                playerScore = totalSeconds
+                console.log('YOU WIN' + "TIME: "+playerScore)
+                clearInterval(timerVar);
+                
+            }
+        }
+    }
+    //=================================== TIMER ==============================================
+    function countTimer() {
+           ++totalSeconds;
+           var hour = Math.floor(totalSeconds /3600);
+           var minute = Math.floor((totalSeconds - hour*3600)/60);
+           var seconds = totalSeconds - (hour*3600 + minute*60);
+           if(hour < 10)
+             hour = "0"+hour;
+           if(minute < 10)
+             minute = "0"+minute;
+           if(seconds < 10)
+             seconds = "0"+seconds;
+           document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+        }
+    //================================ INITIAL BOARD =========================================
     function initBoard(){
         //place bombs
         var bombMap = Array(numBombs).fill('bomb') //create x amount of bombs
@@ -267,20 +268,6 @@
             }
         })
     }
-    
-    function checkWin(){
-        let correctFlags = 0
-        for(let i = 0; i<map.length; i++){
-            if(map[i].classList.contains('flag') && map[i].classList.contains('bomb')){
-                correctFlags++
-            }
-            if(correctFlags === numBombs){
-                console.log('YOU WIN')
-            }
-        }
-    }
-                          
-                          
     })
         
     </script>
