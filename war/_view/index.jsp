@@ -8,8 +8,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head>
-
-	<body>
+	
+    <style>
+body {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5497331ae4b0148a6141bd47/1533488464157-AYYS0QO7ZW0KPGOT6XRQ/underwater-sea-mine-danger-weapon-deadly-naval-ocean-sea_bpocqo-8__F0000.png?format=1500w');
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+    
+    
+    
+    <body>
+        
         <h1><center>CHOOSE YOUR DIFFICULTY
         <c:if test="${! empty userName}">
 			${userName}!
@@ -17,11 +29,19 @@
 		</center></h1>
         <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
         <br>
-		<center><a href="http://localhost:8081/MineSweeper/easy"><h3>EASY DIFFICULTY!</h3> </a></center>
+		<!--<center><a href="http://localhost:8081/MineSweeper/easy"><h3>EASY DIFFICULTY!</h3> </a></center>-->
+        <a href="http://localhost:8081/MineSweeper/easy">
+        <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rectangular_green_flag.svg/1200px-Rectangular_green_flag.svg.png" alt="Easy Game" style="width:90px;height:45px;"></center>
         <br>
-        <center><a href="http://localhost:8081/MineSweeper/medium"><h3>MEDIUM DIFFICULTY!</h3> </a></center>
-        <br>
-        <center><a href="http://localhost:8081/MineSweeper/hard"><h3>HARD DIFFICULTY!</h3></a></center>
+        </a>
+      
+        <a href="http://localhost:8081/MineSweeper/medium">
+        <center><img src="https://www.pmi.com/resources/images/default-source/our-initiatives/yellow-rectangle.png?sfvrsn=db4be4b4_2&imwidth=320&imdensity=1" alt="Medium Game" style="width:90px;height:45px;"></center>
+        </a>
+        
+        <a href="http://localhost:8081/MineSweeper/hard">
+        <center><img src="https://www.downloadclipart.net/large/21606-kw-red-rectangle-button-panel-design.png" alt="Hard Game" style="width:90px;height:90px;"></center>
+        </a>
         
         <br>
         <br>
