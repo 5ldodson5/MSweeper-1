@@ -26,11 +26,8 @@ public class GuestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		System.out.println("Guest Servlet: doPost");
-		
-
 
 		String errorMessage = null;
-
 
 		String result = null;
 		
@@ -55,7 +52,8 @@ public class GuestServlet extends HttpServlet {
 			errorMessage = "Invalid string";
 		}
 		
-		req.setAttribute("userName", req.getParameter("guestName"));
+		//req.setAttribute("userName", result);
+		req.getSession().setAttribute("userName", result);
 		
 
 		req.setAttribute("errorMessage", errorMessage);

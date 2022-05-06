@@ -22,31 +22,42 @@ body {
     
     <body>
         
-        <h1><center>CHOOSE YOUR DIFFICULTY
+        <h1><center><p style="color: white;">CHOOSE YOUR DIFFICULTY
         <c:if test="${! empty userName}">
-			${userName}!
+            ${userName}!
 		</c:if>
-		</center></h1>
+		</p></center></h1>
+		
+		
+		<form action="${pageContext.servletContext.contextPath}/index" method="post">
+		
+		<button type="Submit" name="easy">EASY GAME!</button>
+		<br>
+		<button type="Submit" name="medium">MEDIUM GAME!</button>
+		<br>
+		<button type="Submit" name="hard">HARD GAME!</button>
+		
+		</form>
+		
+		
         <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
         <br>
-		<!--<center><a href="http://localhost:8081/MineSweeper/easy"><h3>EASY DIFFICULTY!</h3> </a></center>-->
-        <a href="http://localhost:8081/MineSweeper/easy">
-        <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rectangular_green_flag.svg/1200px-Rectangular_green_flag.svg.png" alt="Easy Game" style="width:90px;height:45px;"></center>
+
+		
+        <center><a href="http://localhost:8081/MineSweeper/easy" target="_parent"><button>_EASY GAME!_</button></a></center>
+       
         <br>
-        </a>
       
-        <a href="http://localhost:8081/MineSweeper/medium">
-        <center><img src="https://www.pmi.com/resources/images/default-source/our-initiatives/yellow-rectangle.png?sfvrsn=db4be4b4_2&imwidth=320&imdensity=1" alt="Medium Game" style="width:90px;height:45px;"></center>
-        </a>
+      	
+        <center><a href="http://localhost:8081/MineSweeper/medium" target="_parent"><button>MEDIUM GAME!</button></a></center>
+        <br> 
+        <center><a href="http://localhost:8081/MineSweeper/hard" target="_parent"><button> _HARD GAME!_</button></a></center>
         
-        <a href="http://localhost:8081/MineSweeper/hard">
-        <center><img src="https://www.downloadclipart.net/large/21606-kw-red-rectangle-button-panel-design.png" alt="Hard Game" style="width:90px;height:90px;"></center>
-        </a>
         
         <br>
         <br>
 
-        <h1><center>Leaderboards!</center></h1>
+        <h1><center><p style="color:white;">Leaderboards!</p></center></h1>
         <br>
         <br>
         
@@ -61,45 +72,51 @@ body {
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 
-            <h2>EASY!</h2>
-            <h3><center>1. ${userOneEasy}</center></h3>
-        <h3><center>${timeOneEasy} Seconds</center></h3>
-        <h3><center>2. ${userTwoEasy}</center></h3>
-        <h3><center>${timeTwoEasy} Seconds</center></h3>
-        <h3><center>3. ${userThreeEasy}</center></h3>
-        <h3><center>${timeThreeEasy} Seconds</center></h3>
-        <h3><center>4. ${userFourEasy}</center></h3>
-        <h3><center>${timeFourEasy} Seconds</center></h3>
-        <h3><center>5. ${userFiveEasy}</center></h3>
-        <h3><center>${timeFiveEasy} Seconds</center></h3>
+
+            <h2><p style="color: white;">EASY!</p></h2>
+            <h3><center><p style="color:white;">1. ${userOneEasy}</p></center></h3>
+            <h3><center><p style="color: white;">${timeOneEasy} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">2. ${userTwoEasy}</p></center></h3>
+            <h3><center><p style="color: white;">${timeTwoEasy} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">3. ${userThreeEasy}</p></center></h3>
+            <h3><center><p style="color:white;">${timeThreeEasy} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">4. ${userFourEasy}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFourEasy} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">5. ${userFiveEasy}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFiveEasy} Seconds</p></center></h3>
+
             </div>
             
             <div class="item">
-                <h2>MEDIUM!</h2>
-            <h3><center>1. ${userOneMedium}</center></h3>
-        <h3><center>${timeOneMedium} Seconds</center></h3>
-        <h3><center>2. ${userTwoMedium}</center></h3>
-        <h3><center>${timeTwoMedium} Seconds</center></h3>
-        <h3><center>3. ${userThreeMedium}</center></h3>
-        <h3><center>${timeThreeMedium} Seconds</center></h3>
-        <h3><center>4. ${userFourMedium}</center></h3>
-        <h3><center>${timeFourMedium} Seconds</center></h3>
-        <h3><center>5. ${userFiveMedium}</center></h3>
-        <h3><center>${timeFiveMedium} Seconds</center></h3>
+
+             <h2><p style="color: white;">MEDIUM!</p></h2>
+            <h3><center><p style="color:white;">1. ${userOneMedium}</p></center></h3>
+            <h3><center><p style="color: white;">${timeOneMedium} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">2. ${userTwoMedium}</p></center></h3>
+            <h3><center><p style="color: white;">${timeTwoMedium} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">3. ${userThreeMedium}</p></center></h3>
+            <h3><center><p style="color:white;">${timeThreeMedium} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">4. ${userFourMedium}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFourMedium} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">5. ${userFiveMedium}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFiveMedium} Seconds</p></center></h3>
+
             </div>
             
             <div class="item">
-                <h2>HARD!</h2>
-        <h3><center>1. ${userOneHard}</center></h3>
-        <h3><center>${timeOneHard} Seconds</center></h3>
-        <h3><center>2. ${userTwoHard}</center></h3>
-        <h3><center>${timeTwoHard} Seconds</center></h3>
-        <h3><center>3. ${userThreeHard}</center></h3>
-        <h3><center>${timeThreeHard} Seconds</center></h3>
-        <h3><center>4. ${userFourHard}</center></h3>
-        <h3><center>${timeFourHard} Seconds</center></h3>
-        <h3><center>5. ${userFiveHard}</center></h3>
-        <h3><center>${timeFiveHard} Seconds</center></h3>
+
+             <h2><p style="color: white;">HARD!</p></h2>
+            <h3><center><p style="color:white;">1. ${userOneHard}</p></center></h3>
+            <h3><center><p style="color: white;">${timeOneHard} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">2. ${userTwoHard}</p></center></h3>
+            <h3><center><p style="color: white;">${timeTwoHard} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">3. ${userThreeHard}</p></center></h3>
+            <h3><center><p style="color:white;">${timeThreeHard} Seconds</p></center></h3>
+            <h3><center><p style="color: white;">4. ${userFourHard}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFourHard} Seconds</p></center></h3>
+            <h3><center><p style="color:white;">5. ${userFiveHard}</p></center></h3>
+            <h3><center><p style="color: white;">${timeFiveHard} Seconds</p></center></h3>
+
             </div>
           </div>
             

@@ -11,7 +11,6 @@ import java.util.List;
 
 import MineSweeper.db.model.HighScore;
 import MineSweeper.db.model.User;
-import MineSweeper.db.model.Pair;
 
 
 //Uses code from CS320_LibraryExample_Lab06, methods have been edited to fit this project
@@ -388,7 +387,10 @@ public class DerbyDatabase implements IDatabase {
 	// TODO: Change it here and in SQLDemo.java
 	// TODO: DO NOT PUT THE DB IN THE SAME FOLDER AS YOUR PROJECT - that will cause conflicts later w/Git
 	private Connection connect() throws SQLException {
-		Connection conn = DriverManager.getConnection("jdbc:derby:C:/Users/bobby/Documents/Code/library.db;create=true");		
+		Connection conn = DriverManager.getConnection("jdbc:derby:C:/Users/matth/Documents/Code/library.db;create=true");
+		//CHANGE CONNECTION HERE
+		
+		
 		
 		// Set autocommit() to false to allow the execution of
 		// multiple queries/statements as part of the same transaction.
