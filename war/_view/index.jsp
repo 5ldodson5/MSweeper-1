@@ -58,7 +58,7 @@ body {
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 
-            <h2><p style="color: white;">EASY!</p></h2>
+            <h2><p style="color: greenyellow;">EASY!</p></h2>
             <h3><center><p style="color:white;">1. ${userOne}</p></center></h3>
             <h3><center><p style="color: white;">${timeOne} Seconds</p></center></h3>
             <h3><center><p style="color: white;">2. ${userTwo}</p></center></h3>
@@ -69,10 +69,13 @@ body {
             <h3><center><p style="color: white;">${timeFour} Seconds</p></center></h3>
             <h3><center><p style="color:white;">5. ${userFive}</p></center></h3>
             <h3><center><p style="color: white;">${timeFive} Seconds</p></center></h3>
+                <br>
+                <br>
+                <br>
             </div>
             
             <div class="item">
-             <h2><p style="color: white;">MEDIUM!</p></h2>
+             <h2><p style="color: yellow;">MEDIUM!</p></h2>
             <h3><center><p style="color:white;">1. ${userOne}</p></center></h3>
             <h3><center><p style="color: white;">${timeOne} Seconds</p></center></h3>
             <h3><center><p style="color: white;">2. ${userTwo}</p></center></h3>
@@ -83,10 +86,13 @@ body {
             <h3><center><p style="color: white;">${timeFour} Seconds</p></center></h3>
             <h3><center><p style="color:white;">5. ${userFive}</p></center></h3>
             <h3><center><p style="color: white;">${timeFive} Seconds</p></center></h3>
+                <br>
+                <br>
+                <br>
             </div>
             
             <div class="item">
-             <h2><p style="color: white;">HARD!</p></h2>
+             <h2><p style="color: red;">HARD!</p></h2>
             <h3><center><p style="color:white;">1. ${userOne}</p></center></h3>
             <h3><center><p style="color: white;">${timeOne} Seconds</p></center></h3>
             <h3><center><p style="color: white;">2. ${userTwo}</p></center></h3>
@@ -97,6 +103,9 @@ body {
             <h3><center><p style="color: white;">${timeFour} Seconds</p></center></h3>
             <h3><center><p style="color:white;">5. ${userFive}</p></center></h3>
             <h3><center><p style="color: white;">${timeFive} Seconds</p></center></h3>
+                <br>
+                <br>
+                <br>
             </div>
           </div>
             

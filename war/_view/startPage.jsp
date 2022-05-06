@@ -20,7 +20,13 @@ body {
 </style>
     
 <body>
-
+    <br><br><br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
     
     
     
@@ -36,8 +42,8 @@ body {
 <br>
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Minesweeper_flag.svg/1200px-Minesweeper_flag.svg.png" alt="Flag" width="250" height="250">
-    
-    
+ 
+    <img align="right"   src="https://www.naval-technology.com/wp-content/uploads/sites/15/2017/09/3-hms-cattistock.jpg" alt="Minesweeper" width="250" height="250">
     
     
     
