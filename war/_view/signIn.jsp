@@ -17,24 +17,37 @@
 		</style>
 	</head>
     
+       <style>
+body {
+  background-image: url('https://t4.ftcdn.net/jpg/03/91/41/73/360_F_391417314_EW79DbYOwbBCjmmHqchcIJtDlPO522n7.jpg');
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+    
+    
 	<body>
 		<c:if test="${! empty errorMessage}">
 			<div class="error">${errorMessage}</div>
 		</c:if>
-	
+        <a href="http://localhost:8081/MineSweeper/startPage"><h5>Go Back!</h5> </a>
+        <br><br><br><br><br>
+        <h1><center><p style="color: orange">Sign In!</p></center></h1>
+	       <br><br><br><br><br><br>
 		<form action="${pageContext.servletContext.contextPath}/signIn" method="post">
-			<table>
+			<center><table>
 				<tr>
-					<td class="label">Username:</td>
+					<td class="label"><p style="color: orange">Username:</p></td>
 					<td><input type="text" name="username" size="12" value="${signIn.username}" /></td>
 				</tr>
 				<tr>
-					<td class="label">Password:</td>
+					<td class="label"><p style="color: orange">Password:</p></td>
 					<td><input type="password" name="password" size="12" value="${signIn.password}" /></td>
 				</tr>
                 
-			</table>
-			<input type="Submit" name="submit" value="Login!">
+			</table></center>
+			<center><input type="Submit" name="submit" value="Login!"></center>
 		</form>
 	</body>
 </html>

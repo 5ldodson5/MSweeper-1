@@ -18,13 +18,29 @@
 		</style>
 	</head>
     
+         <style>
+body {
+  background-image: url(' https://wallpapercave.com/wp/YocUFbD.jpg');
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+    
+    
+   
+    
 	<body>
 		<c:if test="${! empty errorMessage}">
 			<div class="error">${errorMessage}</div>
 		</c:if>
-	
+	       <h1><center>Sign Up!</center></h1>
+        
+        
+        
+        <br><br><br><br><br><br><br><br><br><br><br>
 		<form action="${pageContext.servletContext.contextPath}/signUp" method="post">
-			<table>
+			<center><table>
 				<tr>
 					<td class="label">Username:</td>
 					<td><input type="text" name="username" size="12" value="${signUp.username}" /></td>
@@ -34,12 +50,12 @@
 					<td><input type="password" name="password" size="12" value="${signUp.password}" /></td>
 				</tr>
                 <tr>
-					<td class="label">Enter Password Again:</td>
+					<td class="label">Password Confirmation:</td>
 					<td><input type="password" name="passwordCheck" size="12" value="${signUp.passwordCheck}" /></td>
 				</tr>
                 
-			</table>
-			<input type="Submit" name="submit" value="Login!">
+			</table></center>
+			<center><input type="Submit" name="submit" value="Login!"></center>
 		</form>
 	</body>
 </html>
