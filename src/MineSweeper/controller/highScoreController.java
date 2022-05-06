@@ -26,47 +26,47 @@ public class highScoreController {
 		List<HighScore> highScores;
 		highScores = derbyDB.findAllHighScoresByDifficulty("Easy");
 		
-		req.setAttribute("userOneEasy", highScores.get(0).getUsername());
-		req.setAttribute("userTwoEasy", highScores.get(1).getUsername());
-		req.setAttribute("userThreeEasy", highScores.get(2).getUsername());
-		req.setAttribute("userFourEasy", highScores.get(3).getUsername());
-		req.setAttribute("userFiveEasy", highScores.get(4).getUsername());
+		req.getSession().setAttribute("userOneEasy", highScores.get(0).getUsername());
+		req.getSession().setAttribute("userTwoEasy", highScores.get(1).getUsername());
+		req.getSession().setAttribute("userThreeEasy", highScores.get(2).getUsername());
+		req.getSession().setAttribute("userFourEasy", highScores.get(3).getUsername());
+		req.getSession().setAttribute("userFiveEasy", highScores.get(4).getUsername());
 		
-		req.setAttribute("timeOneEasy", highScores.get(0).getScore());
-		req.setAttribute("timeTwoEasy", highScores.get(1).getScore());
-		req.setAttribute("timeThreeEasy", highScores.get(2).getScore());
-		req.setAttribute("timeFourEasy", highScores.get(3).getScore());
-		req.setAttribute("timeFiveEasy", highScores.get(4).getScore());
+		req.getSession().setAttribute("timeOneEasy", highScores.get(0).getScore());
+		req.getSession().setAttribute("timeTwoEasy", highScores.get(1).getScore());
+		req.getSession().setAttribute("timeThreeEasy", highScores.get(2).getScore());
+		req.getSession().setAttribute("timeFourEasy", highScores.get(3).getScore());
+		req.getSession().setAttribute("timeFiveEasy", highScores.get(4).getScore());
 		
 		
 		highScores = derbyDB.findAllHighScoresByDifficulty("Medium");
 		
-		req.setAttribute("userOneMedium", highScores.get(0).getUsername());
-		req.setAttribute("userTwoMedium", highScores.get(1).getUsername());
-		req.setAttribute("userThreeMedium", highScores.get(2).getUsername());
-		req.setAttribute("userFourMedium", highScores.get(3).getUsername());
-		req.setAttribute("userFiveMedium", highScores.get(4).getUsername());
+		req.getSession().setAttribute("userOneMedium", highScores.get(0).getUsername());
+		req.getSession().setAttribute("userTwoMedium", highScores.get(1).getUsername());
+		req.getSession().setAttribute("userThreeMedium", highScores.get(2).getUsername());
+		req.getSession().setAttribute("userFourMedium", highScores.get(3).getUsername());
+		req.getSession().setAttribute("userFiveMedium", highScores.get(4).getUsername());
 		
-		req.setAttribute("timeOneMedium", highScores.get(0).getScore());
-		req.setAttribute("timeTwoMedium", highScores.get(1).getScore());
-		req.setAttribute("timeThreeMedium", highScores.get(2).getScore());
-		req.setAttribute("timeFourMedium", highScores.get(3).getScore());
-		req.setAttribute("timeFiveMedium", highScores.get(4).getScore());
+		req.getSession().setAttribute("timeOneMedium", highScores.get(0).getScore());
+		req.getSession().setAttribute("timeTwoMedium", highScores.get(1).getScore());
+		req.getSession().setAttribute("timeThreeMedium", highScores.get(2).getScore());
+		req.getSession().setAttribute("timeFourMedium", highScores.get(3).getScore());
+		req.getSession().setAttribute("timeFiveMedium", highScores.get(4).getScore());
 		
 		
 		highScores = derbyDB.findAllHighScoresByDifficulty("Hard");
 		
-		req.setAttribute("userOneHard", highScores.get(0).getUsername());
-		req.setAttribute("userTwoHard", highScores.get(1).getUsername());
-		req.setAttribute("userThreeHard", highScores.get(2).getUsername());
-		req.setAttribute("userFourHard", highScores.get(3).getUsername());
-		req.setAttribute("userFiveHard", highScores.get(4).getUsername());
+		req.getSession().setAttribute("userOneHard", highScores.get(0).getUsername());
+		req.getSession().setAttribute("userTwoHard", highScores.get(1).getUsername());
+		req.getSession().setAttribute("userThreeHard", highScores.get(2).getUsername());
+		req.getSession().setAttribute("userFourHard", highScores.get(3).getUsername());
+		req.getSession().setAttribute("userFiveHard", highScores.get(4).getUsername());
 		
-		req.setAttribute("timeOneHard", highScores.get(0).getScore());
-		req.setAttribute("timeTwoHard", highScores.get(1).getScore());
-		req.setAttribute("timeThreeHard", highScores.get(2).getScore());
-		req.setAttribute("timeFourHard", highScores.get(3).getScore());
-		req.setAttribute("timeFiveHard", highScores.get(4).getScore());
+		req.getSession().setAttribute("timeOneHard", highScores.get(0).getScore());
+		req.getSession().setAttribute("timeTwoHard", highScores.get(1).getScore());
+		req.getSession().setAttribute("timeThreeHard", highScores.get(2).getScore());
+		req.getSession().setAttribute("timeFourHard", highScores.get(3).getScore());
+		req.getSession().setAttribute("timeFiveHard", highScores.get(4).getScore());
 		
 		
 		

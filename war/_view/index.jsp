@@ -116,6 +116,7 @@ body {
             <h3><center><p style="color: white;">${timeFourHard} Seconds</p></center></h3>
             <h3><center><p style="color:white;">5. ${userFiveHard}</p></center></h3>
             <h3><center><p style="color: white;">${timeFiveHard} Seconds</p></center></h3>
+            <h3><center><p style="color: white;"></p></center></h3>
 
             </div>
           </div>

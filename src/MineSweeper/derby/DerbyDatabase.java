@@ -271,7 +271,7 @@ public class DerbyDatabase implements IDatabase {
 
 				try {			
 					stmt1 = conn.prepareStatement(
-							"insert into users (difficulty, username, score) " +
+							"insert into highScores (difficulty, username, score) " +
 							"  values(?, ?, ?) "
 					);
 					stmt1.setString(1, difficulty);
