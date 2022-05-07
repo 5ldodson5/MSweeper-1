@@ -71,7 +71,6 @@ body {
             
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                
 
             <h2><p style="color: white;">EASY!</p></h2>
             <h3><center><p style="color:white;">1. ${userOneEasy}</p></center></h3>
@@ -118,6 +117,8 @@ body {
             <h3><center><p style="color: white;">${timeFiveHard} Seconds</p></center></h3>
             <h3><center><p style="color: white;"></p></center></h3>
 
+
+ 
             </div>
           </div>
             
