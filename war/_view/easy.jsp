@@ -4,7 +4,17 @@
 	<head>
 		<title>EASY GAME</title>
         <meta charset="UTF-8">
-    
+        
+          <style>
+body {
+  background-image: url('https://media.istockphoto.com/photos/caribbean-sea-picture-id1167845870?b=1&k=20&m=1167845870&s=170667a&w=0&h=_Wl-9B1t-3QhWvrN84fXcTIoDbqciZP3W8X2-GJMdVw=');
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+              
+</style>
+<center>  
 	<body>
 		<form action="${pageContext.servletContext.contextPath}/easy" method="post">
 		<input type="hidden" id="endMessSend" name = "endMessSend"></input>
@@ -12,17 +22,17 @@
 		<input type="hidden" name="userName" value="${userName}" />
 		
 		<c:if test="${! empty userName}">
-            ${userName}!
+            <center>${userName}!</center>
 		</c:if>
 		<br>
 		<br>
-		<button type="Submit" name="return">GO BACK!</button>
+        <center><button type="Submit" name="return">GO BACK!</button></center>
 
-        <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
+        <center><a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a></center>
         <br>
         
 <div id="timer"></div>
-    <style>
+    <center><style>
         .grid{
         height: 400px;
         width: 400px;
@@ -40,7 +50,7 @@
     .bomb{
         background-color: blue;
         }
-    </style>
+        </style></center>
     <script type = "text/javascript">
         document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
@@ -294,22 +304,22 @@
         <br>
         <br>
         <br>
-        <div class = "grid"></div>
+        <center><div class = "grid"></div></center>
         
         <br>
 		
+        </center>
 		
-		
-        <button type="Submit" name="restart">RESTART!</button>
+        <center><button type="Submit" name="restart">RESTART!</button></center>
         <br>
         <br>
         </form>
-        <div id="endMess"></div>
+    <center><div id="endMess"></div></center>
 		<br>
-		<div id="finalScore"></div>
+    <center><div id="finalScore"></div></center>
 		
 		</form>
 		
-        
+    
 	</body>
 </html>

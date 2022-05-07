@@ -4,13 +4,21 @@
 	<head>
 		<title>MEDIUM GAME</title>
         <meta charset="UTF-8">
-    
+          <style>
+body {
+  background-image: url('https://media.istockphoto.com/photos/waves-picture-id541988780?b=1&k=20&m=541988780&s=170667a&w=0&h=d0ptSMKZDvYlzHU1h1MihP3CEMZxX8PsmjTm_1mZ5DQ=');
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+              
+</style>
 	<body>
 		<form action="${pageContext.servletContext.contextPath}/medium" method="post">
 		<input type="hidden" id="endMessSend" name = "endMessSend"></input>
 		<input type="hidden" id="finalScoreSend" name = "finalScoreSend"></input>
 		<input type="hidden" name="userName" value="${userName}" />
-		
+		<center>
 		<c:if test="${! empty userName}">
             ${userName}!
 		</c:if>
@@ -298,15 +306,17 @@
         <br>
 		
 		
-		
-        <button type="Submit" name="restart">RESTART!</button>
+        </center>
+        <center><button type="Submit" name="restart">RESTART!</button></center>
         <br>
         <br>
         </form>
-        <div id="endMess"></div>
+    <center><div id="endMess"></div></center>
 		<br>
-		<div id="finalScore"></div>
-		
+    <center>><div id="finalScore"></div></center>
+        
+    
+
 		</form>
         
 	</body>

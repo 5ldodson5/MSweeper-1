@@ -83,7 +83,9 @@ body {
             <h3><center><p style="color: white;">${timeFourEasy} Seconds</p></center></h3>
             <h3><center><p style="color:white;">5. ${userFiveEasy}</p></center></h3>
             <h3><center><p style="color: white;">${timeFiveEasy} Seconds</p></center></h3>
-
+            <br>
+            <br>
+            <br>
             </div>
             
             <div class="item">
@@ -99,7 +101,9 @@ body {
             <h3><center><p style="color: white;">${timeFourMedium} Seconds</p></center></h3>
             <h3><center><p style="color:white;">5. ${userFiveMedium}</p></center></h3>
             <h3><center><p style="color: white;">${timeFiveMedium} Seconds</p></center></h3>
-
+            <br>
+            <br>
+            <br>
             </div>
             
             <div class="item">
@@ -116,7 +120,9 @@ body {
             <h3><center><p style="color:white;">5. ${userFiveHard}</p></center></h3>
             <h3><center><p style="color: white;">${timeFiveHard} Seconds</p></center></h3>
             <h3><center><p style="color: white;"></p></center></h3>
-
+             <br>
+            <br>
+            <br>
 
  
             </div>
