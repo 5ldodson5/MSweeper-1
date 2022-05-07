@@ -11,7 +11,6 @@ import java.util.List;
 
 import MineSweeper.db.model.HighScore;
 import MineSweeper.db.model.User;
-import MineSweeper.db.model.Pair;
 
 
 //Uses code from CS320_LibraryExample_Lab06, methods have been edited to fit this project
@@ -30,6 +29,8 @@ public class DerbyDatabase implements IDatabase {
 
 	private static final int MAX_ATTEMPTS = 10;
 	
+	
+	//Returns a list containing all users in the Users database table.
 	public List<User> findAllUsers(){
 		return executeTransaction(new Transaction<List<User>>() {
 			public List<User> execute(Connection conn) throws SQLException{
@@ -68,6 +69,10 @@ public class DerbyDatabase implements IDatabase {
 		});
 	}
 	
+	
+	//Returns a list containing all High Scores in the HighScores database table.
+	//List is in order by lowest score (time) to highest. (Score is the time taken to complete the game.)
+	//Only returns the High Scores with the specified difficulty.
 	@Override
 	public List<HighScore> findAllHighScoresByDifficulty(final String difficulty) {
 		return executeTransaction(new Transaction<List<HighScore>>() {
@@ -88,7 +93,6 @@ public class DerbyDatabase implements IDatabase {
 					List<HighScore> result = new ArrayList<HighScore>();
 					
 					resultSet = stmt.executeQuery();
-					
 
 					Boolean found = false;
 					
@@ -100,7 +104,6 @@ public class DerbyDatabase implements IDatabase {
 						
 						result.add(highScore);
 					}
-					
 
 					if (!found) {
 						System.out.println("No high scores were found in the database");
@@ -115,6 +118,8 @@ public class DerbyDatabase implements IDatabase {
 		});
 	}
 	
+	
+	//Inserts a new user into the Users database table.
 	public Integer insertUserIntoUsersTable(final String username, final String password) {
 		return executeTransaction(new Transaction<Integer>() {
 			@Override
@@ -126,22 +131,18 @@ public class DerbyDatabase implements IDatabase {
 				
 				Integer user_id   = -1;
 
-
 				try {
 					
-
 					stmt1 = conn.prepareStatement(
 							"insert into users (username, password) " +
 							"  values(?, ?) "
 					);
 					stmt1.setString(1, username);
 					stmt1.setString(2, password);
-					
 	
 					stmt1.executeUpdate();
 					
 					System.out.println("New user <" + username + "> inserted into Users table");					
-
 
 					stmt2 = conn.prepareStatement(
 							"select user_id from users " +
@@ -151,9 +152,7 @@ public class DerbyDatabase implements IDatabase {
 					stmt2.setString(1, username);
 					stmt2.setString(2, password);
 
-					
 					resultSet2 = stmt2.executeQuery();
-					
 					
 					if (resultSet2.next())
 					{
@@ -175,6 +174,7 @@ public class DerbyDatabase implements IDatabase {
 		});
 	}
 
+	//Checks to see if a username with the specified password exist in the Users database table.
 	public Boolean checkUsernamePassword(final String username, final String password) {
 		return executeTransaction(new Transaction<Boolean>() {
 			@Override
@@ -196,13 +196,11 @@ public class DerbyDatabase implements IDatabase {
 					
 					resultSet = stmt.executeQuery();
 					
-					
 					Boolean found = false;
 					
 					while (resultSet.next()) {
 						found = true;
 					}
-					
 					
 					if (!found) {
 						System.out.println("Username and password do not exist in the database");
@@ -218,6 +216,7 @@ public class DerbyDatabase implements IDatabase {
 		});
 	}
 	
+	//Checks the Users database table to see if a specified username exists.
 	public Boolean checkUsernameExists(final String username) {
 		return executeTransaction(new Transaction<Boolean>() {
 			@Override
@@ -259,30 +258,26 @@ public class DerbyDatabase implements IDatabase {
 		});
 	}
 	
+	//Inserts a new High Score into the HighScores database table.
 	public Integer insertHighScoreIntoHighScoresTable(final String difficulty, final String username, final int score) {
 		return executeTransaction(new Transaction<Integer>() {
 			@Override
 			public Integer execute(Connection conn) throws SQLException {
 				PreparedStatement stmt1 = null;
 				PreparedStatement stmt2 = null;			
-				
 				ResultSet resultSet2 = null;				
 				
 				Integer user_id   = -1;
 
-				
-				try {
-					
-			
+				try {			
 					stmt1 = conn.prepareStatement(
-							"insert into users (difficulty, username, score) " +
+							"insert into highScores (difficulty, username, score) " +
 							"  values(?, ?, ?) "
 					);
 					stmt1.setString(1, difficulty);
 					stmt1.setString(2, username);
 					stmt1.setInt(3, score);
-					
-					
+
 					stmt1.executeUpdate();
 					
 					System.out.println("New HighScore <" + username + "> inserted into HighScores table");					
@@ -295,31 +290,24 @@ public class DerbyDatabase implements IDatabase {
 		});
 	}
 	
+	//Removes a user from the Users database table.
 	public List<User> removeUserByUsername(final String username) {
 		return executeTransaction(new Transaction<List<User>>() {
 			@Override
 			public List<User> execute(Connection conn) throws SQLException {
 				PreparedStatement stmt1 = null;
 				PreparedStatement stmt2 = null;
-						
-				
 				ResultSet resultSet1    = null;			
 
-				
 				try {
-										
-					
-				
 					stmt1 = conn.prepareStatement(
 							"select users.* " +
 							"  from  users " +
 							"  where users.username = ? "
 					);
 					
-				
 					stmt1.setString(1, username);
 					resultSet1 = stmt1.executeQuery();
-					
 					
 					List<User> users = new ArrayList<User>();					
 				
@@ -328,25 +316,20 @@ public class DerbyDatabase implements IDatabase {
 						loadUser(user, resultSet1, 1);
 						users.add(user);
 					}
-					
 				
 					stmt2 = conn.prepareStatement(
 							"delete from users " +
 							"  where userId = ? "
 					);
 					
-					
-				
 					stmt2.setInt(1, users.get(0).getUserId());
 					stmt2.executeUpdate();
 					
 					System.out.println("Deleted user <" + username + "> from DB");									
 					
-					
 					return users;
 				} finally {
 					DBUtil.closeQuietly(resultSet1);
-
 					DBUtil.closeQuietly(stmt1);
 					DBUtil.closeQuietly(stmt2);			
 				}
@@ -357,13 +340,12 @@ public class DerbyDatabase implements IDatabase {
 	
 	// wrapper SQL transaction function that calls actual transaction function (which has retries)
 	public<ResultType> ResultType executeTransaction(Transaction<ResultType> txn) {
-			try {
-				return doExecuteTransaction(txn);
-			} catch (SQLException e) {
-				throw new PersistenceException("Transaction failed", e);
-			}
+		try {
+			return doExecuteTransaction(txn);
+		} catch (SQLException e) {
+			throw new PersistenceException("Transaction failed", e);
 		}
-	
+	}
 	
 	// SQL transaction function which retries the transaction MAX_ATTEMPTS times before failing
 	public<ResultType> ResultType doExecuteTransaction(Transaction<ResultType> txn) throws SQLException {
@@ -402,10 +384,13 @@ public class DerbyDatabase implements IDatabase {
 	}
 
 	// TODO: Here is where you name and specify the location of your Derby SQL database
-	// TODO: Change it here and in SQLDemo.java under CS320_LibraryExample_Lab06->edu.ycp.cs320.sqldemo
+	// TODO: Change it here and in SQLDemo.java
 	// TODO: DO NOT PUT THE DB IN THE SAME FOLDER AS YOUR PROJECT - that will cause conflicts later w/Git
 	private Connection connect() throws SQLException {
-		Connection conn = DriverManager.getConnection("jdbc:derby:C:/Users/bobby/Documents/Code/library.db;create=true");		
+		Connection conn = DriverManager.getConnection("jdbc:derby:C:/Users/matth/Documents/Code/library.db;create=true");
+		//CHANGE CONNECTION HERE
+		
+		
 		
 		// Set autocommit() to false to allow the execution of
 		// multiple queries/statements as part of the same transaction.
@@ -414,7 +399,7 @@ public class DerbyDatabase implements IDatabase {
 		return conn;
 	}
 	
-	// retrieves Author information from query result set
+	// retrieves HighScore information from query result set
 	private void loadHighScore(HighScore highScore, ResultSet resultSet, int index) throws SQLException {
 		highScore.setDifficulty(resultSet.getString(index++));
 		highScore.setUsername(resultSet.getString(index++));
@@ -428,8 +413,7 @@ public class DerbyDatabase implements IDatabase {
 		user.setPassword(resultSet.getString(index++));
 	}
 	
-	
-	//  creates the Authors and Books tables
+	//  creates the HighScores and Users tables
 	public void createTables() {
 		executeTransaction(new Transaction<Boolean>() {
 			@Override
@@ -460,7 +444,6 @@ public class DerbyDatabase implements IDatabase {
 					stmt2.executeUpdate();
 					
 					System.out.println("Users table created");					
-									
 										
 					return true;
 				} finally {

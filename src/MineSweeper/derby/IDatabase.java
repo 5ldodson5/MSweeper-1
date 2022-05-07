@@ -4,7 +4,6 @@ import java.util.List;
 
 import MineSweeper.db.model.HighScore;
 import MineSweeper.db.model.User;
-import MineSweeper.db.model.Pair;
 
 
 //Uses code from CS320_LibraryExample_Lab06, methods have been edited to fit this project

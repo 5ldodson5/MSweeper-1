@@ -64,7 +64,8 @@ public class SignUpServlet extends HttpServlet {
 			req.setAttribute("whetherGuestExists", result); 
 			
 			if(result == true) {
-				req.setAttribute("userName", req.getParameter("username"));
+				req.getSession().setAttribute("userName", result);
+				//req.setAttribute("userName", req.getParameter("username"));
 				highScoreController highScores = new highScoreController();
 				try {
 					req=highScores.addHighScore(req);
