@@ -6,7 +6,18 @@
         <meta charset="UTF-8">
     
 	<body>
-         <a href="http://localhost:8081/MineSweeper/index"><h3>GO BACK!</h3> </a>
+		<form action="${pageContext.servletContext.contextPath}/hard" method="post">
+		<input type="hidden" id="endMessSend" name = "endMessSend"></input>
+		<input type="hidden" id="finalScoreSend" name = "finalScoreSend"></input>
+		<input type="hidden" name="userName" value="${userName}" />
+		
+		<c:if test="${! empty userName}">
+            ${userName}!
+		</c:if>
+		<br>
+		<br>
+		<button type="Submit" name="return">GO BACK!</button>
+		
         <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
         <br>
 <div id="timer"></div>
@@ -68,7 +79,11 @@
                 playerScore = totalSeconds
                 console.log('YOU WIN' + "TIME: "+playerScore)
                 clearInterval(timerVar);
+                document.getElementById("endMess").innerHTML = "YOU WIN!";
+                document.getElementById("finalScore").innerHTML = "Final Score = " + playerScore + " seconds";
                 
+                document.getElementById("endMessSend").value = "YOU WIN!";
+                document.getElementById("finalScoreSend").value = playerScore;
             }
         }
     }
@@ -267,6 +282,9 @@
                 tile.classList.add('checked')
             }
         })
+        document.getElementById("endMess").innerHTML = "GAME OVER!";
+        
+        document.getElementById("endMessSend").value = "GAME OVER!";
     }
     })
         
@@ -276,6 +294,20 @@
         <br>
         <br>
         <div class = "grid"></div>
+        
+        <br>
+		
+		
+		
+        <button type="Submit" name="restart">RESTART!</button>
+        <br>
+        <br>
+        </form>
+        <div id="endMess"></div>
+		<br>
+		<div id="finalScore"></div>
+		
+		</form>
         
 	</body>
 </html>
