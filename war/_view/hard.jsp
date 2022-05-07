@@ -4,7 +4,18 @@
 	<head>
 		<title>HARD GAME</title>
         <meta charset="UTF-8">
-    
+               <style>
+body {
+  background-image: url('https://media.istockphoto.com/photos/turbulent-ocean-lighthouse-picture-id918749116?k=20&m=918749116&s=612x612&w=0&h=zmPeXJNXVYm5Q89VRw9nV4GDFpwhx975g4z21xt3-BE=');
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+              
+</style>
+        
+        
+    <center>
 	<body>
 		<form action="${pageContext.servletContext.contextPath}/hard" method="post">
 		<input type="hidden" id="endMessSend" name = "endMessSend"></input>
@@ -298,15 +309,17 @@
         <br>
 		
 		
-		
-        <button type="Submit" name="restart">RESTART!</button>
+        </center>
+        
+        <center><button type="Submit" name="restart">RESTART!</button></center>
+
         <br>
         <br>
         </form>
-        <div id="endMess"></div>
+        <center><div id="endMess"></div> </center>
 		<br>
-		<div id="finalScore"></div>
-		
+		<center><div id="finalScore"></div> </center>
+       
 		</form>
         
 	</body>
