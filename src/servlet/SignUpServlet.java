@@ -32,9 +32,9 @@ public class SignUpServlet extends HttpServlet {
 				String errorMessage = null;
 
 				boolean result=false;
-			
-			try {
 				String username = getStringFromParameter(req.getParameter("username"));
+				
+			try {
 				String password = getStringFromParameter(req.getParameter("password"));
 				String passwordCheck = getStringFromParameter(req.getParameter("passwordCheck"));
 				
@@ -64,7 +64,7 @@ public class SignUpServlet extends HttpServlet {
 			req.setAttribute("whetherGuestExists", result); 
 			
 			if(result == true) {
-				req.getSession().setAttribute("userName", result);
+				req.getSession().setAttribute("userName", username);
 				//req.setAttribute("userName", req.getParameter("username"));
 				highScoreController highScores = new highScoreController();
 				try {
