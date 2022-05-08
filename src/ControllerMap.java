@@ -256,6 +256,9 @@ public boolean win() {
 	public Tile[][] getVisibleMap(){
 		return visableMap;
 	}
+	public int getSideSize() {
+		return sideSize;
+	}
 	
 	
 }
