@@ -9,21 +9,41 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head>
+    
+      <style>
+body {
+  background-image: url('https://medicainstitute.com/wp-content/uploads/2017/10/blue-gradient-background-6517.jpeg');
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+    
 <body>
+    <br><br><br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    
+    
+    
+<h1><center><p style="color: white;">WELCOME TO MINESWEEPER!</p></center></h1>
+<h2><center><p style="color: white">Are you a guest or returning user?</p></center></h2>
+<center><a href="http://localhost:8081/MineSweeper/signUp"><h3><p style="color: aqua">NEW USER!</p></h3></a></center>
+    <br>
+<center><a href="http://localhost:8081/MineSweeper/signIn"><h3><p style="color: aqua">RETURNING USER!</p></h3></a></center>
+    <br>
+<center><a href="http://localhost:8081/MineSweeper/guest"><h3><p style="color: aqua">GUEST!</p></h3></a></center>
 
     
-    
-    
-<h1><center>WELCOME TO MINESWEEPER!</center></h1>
-<h2><center>Are you a guest or returning user?</center></h2>
-<center><a href="http://localhost:8081/MineSweeper/signUp"><h3>NEW USER!</h3></a></center>
-    <br>
-<center><a href="http://localhost:8081/MineSweeper/signIn"><h3>RETURNING USER!</h3></a></center>
-    <br>
-<center><a href="http://localhost:8081/MineSweeper/guest"><h3>GUEST!</h3></a></center>
+<br>
 
-    
-    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Minesweeper_flag.svg/1200px-Minesweeper_flag.svg.png" alt="Flag" width="250" height="250">
+ 
+    <img align="right"   src="https://www.naval-technology.com/wp-content/uploads/sites/15/2017/09/3-hms-cattistock.jpg" alt="Minesweeper" width="250" height="250">
     
     
     

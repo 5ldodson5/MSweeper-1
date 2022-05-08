@@ -1,0 +1,8 @@
+To start the database, make sure you change the file path in DerbyDatabase (and SQLDemo, if you choose to use it).
+Please do not put the database into the project folder as GitHub does not like that.
+Run DerbyDatabase to create the database.
+
+To run the program, run Main as a Java Application.
+Link to access the web application: http://localhost:8081/MineSweeper/startPage
+Enjoy the game!
+-Fuses
