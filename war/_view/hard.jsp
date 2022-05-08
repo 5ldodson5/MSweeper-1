@@ -45,10 +45,73 @@ body {
         width: 50px;
         }
     .checked{
-        background-color: lightgrey;
-        }
-    .bomb{
-        background-color: blue;
+    height: 40px;
+    width: 40px;
+    border: 2px solid;
+    background-color: #beeced;
+    border-color: #9c998d;
+    box-sizing: border-box;
+}
+.one {
+    color: red;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+
+.two {
+    color: blue;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+
+.three {
+    color: purple;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+
+.four{
+    color: darkorange;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+.five{
+    color: greenyellow;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+.six{
+    color: green;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+.seven{
+    color: lightseagreen;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+.eight{
+    color: blueviolet;
+    font-size: 40px;
+    vertical-align: middle;
+    text-align: center
+}
+
+
+.bomb{
+    background-color: blue;
+
+    vertical-align: middle;
+    align-content:center
+}
+    
         }
     </style>
     <script type = "text/javascript">
@@ -196,7 +259,7 @@ body {
         if(!tile.classList.contains('checked') && (numflags < numBombs)){
             if(!tile.classList.contains('flag')){
                 tile.classList.add('flag')
-                tile.innerHTML = '/='
+                tile.innerHTML = '&#128681'
                 numflags++
                 checkWin()
             }else{
@@ -216,9 +279,13 @@ body {
             if(total != 0){
                 tile.classList.add('checked')
                 if (total == 1) tile.classList.add('one')
-                if (total == 2) tile.classList.add('two')
-                if (total == 3) tile.classList.add('three')
-                if (total == 4) tile.classList.add('four')
+                else if (total == 2) tile.classList.add('two')
+                else if (total == 3) tile.classList.add('three')
+                else if (total == 4) tile.classList.add('four')
+                else if (total == 5) tile.classList.add('five')
+                else if (total == 6) tile.classList.add('six')
+                else if (total == 7) tile.classList.add('seven')
+                else if (total == 8) tile.classList.add('eight')
                 tile.innerHTML = total
                 return
             }
@@ -288,7 +355,7 @@ body {
         isGameOver = true
         map.forEach(tile => {
             if(tile.classList.contains('bomb')){
-                tile.innerHTML = 'BOMB'
+                tile.innerHTML = '&#128163'
                 tile.classList.remove('bomb')
                 tile.classList.add('checked')
             }
