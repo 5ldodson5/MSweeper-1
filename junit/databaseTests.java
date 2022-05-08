@@ -24,16 +24,21 @@ public void setUp() throws Exception {
 
 
 @Test
-public void testCheckUsernameAndPassword() throws Exception {
+public void testCheckUsernameAndPasswordT() throws Exception {
 	assertEquals(test.checkUsernamePassword("admin", "password"), true);
 	assertEquals(test.checkUsernamePassword("Jim Bob", "jimbob1"), true);
 	assertEquals(test.checkUsernamePassword("Cereal Bowl", "bowlocereal"), true);
 	
+}
+
+
+@Test public void testCheckUsernameAndPasswordF() throws Exception{
 	assertEquals(test.checkUsernamePassword("carl", "huh"), false);
 	assertEquals(test.checkUsernamePassword("Jim bob", "jimbob123"), false);
 	assertEquals(test.checkUsernamePassword("Cereal Bowl", "bowlOFcereal"), false);
-	
 }
+	
+
 
 
 @Test
@@ -56,12 +61,16 @@ public void testGetHighScores() throws Exception{
 }
 
 @Test
-public void testUsernameExists() throws Exception{
-	assertEquals(test.checkUsernameExists("Carl"), false);
-	assertEquals(test.checkUsernameExists("Fred"), false);
+public void testUsernameExistsT() throws Exception{
 	assertEquals(test.checkUsernameExists("Jim Bob"), true);
 	assertEquals(test.checkUsernameExists("Pizza Box"), true);
 	assertEquals(test.checkUsernameExists("admin"), true);
 }
 
+@Test
+public void testUsernameExistsF() throws Exception{
+	assertEquals(test.checkUsernameExists("Carl"), false);
+	assertEquals(test.checkUsernameExists("Fred"), false);
+}
+ 
 }

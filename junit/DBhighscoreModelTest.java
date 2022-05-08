@@ -53,6 +53,39 @@ public void testgetScore() throws Exception {
 	assertEquals(test3.getScore(), 9999);
 }
 
+@Test
+public void testgetNewUsername() throws Exception {
+	
+	test1.setUsername("Dakota");
+	test2.setUsername("Phillip");
+	test3.setUsername("Esteban");
+			
+	assertEquals(test1.getUsername(), "Dakota");
+	assertEquals(test2.getUsername(), "Phillip");
+	assertEquals(test3.getUsername(), "Esteban");
+}
 
+@Test
+public void testgetNewDifficulty() throws Exception {
+	
+	test1.setDifficulty("Hard");
+	test2.setDifficulty("Easy");
+	test3.setDifficulty("Medium");
+	
+	assertEquals(test1.getDifficulty(), "Hard");
+	assertEquals(test2.getDifficulty(), "Easy");
+	assertEquals(test3.getDifficulty(), "Medium");
+}
+
+@Test
+public void testgetNewScore() throws Exception {
+	test1.setScore(0);
+	test2.setScore(2);
+	test3.setScore(666);
+	
+	assertEquals(test1.getScore(), 0);
+	assertEquals(test2.getScore(), 2);
+	assertEquals(test3.getScore(), 666);
+}
 
 }
