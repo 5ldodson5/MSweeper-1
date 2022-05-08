@@ -2,11 +2,69 @@
 
 <html>
 	<head>
-		<title>MEDIUM GAME</title>
+		<title>EASY GAME</title>
         <meta charset="UTF-8">
     
 	<body>
-<div id="timer"></div>
+<label id="minutes">00</label>
+<label id="colon">:</label>
+<label id="seconds">00</label>
+    <script type="text/javascript">
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    </script>
+<script type="text/javascript">
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    
+    
+    
+    </script>
+    
     <style>
         .grid{
         height: 400px;
@@ -26,7 +84,7 @@
 
 
     .bomb{
-        background-color: blue;
+        background-color: gray;
         }
     </style>
     <script type = "text/javascript">
@@ -39,14 +97,11 @@
         
     */
     let size = 8
-    let numBombs = 18
+    let numBombs = 10
     let numflags = 0
     let map = []
     let isGameOver = false
-    let isGameWon = false
-    let playerScore = 0
-    var timerVar = setInterval(countTimer, 1000);
-    var totalSeconds = 0;
+    
     /*
         There are several changes I made to our code when moving it to javascript:
         - The visable and hidden maps no longer exist. It was far more efficient to store 'bomb' and 'safe'
@@ -56,38 +111,6 @@
         - 
         
     */
-    
-    //================================ WIN CONDITION =========================================
-    function checkWin(){
-        let correctFlags = 0
-        for(let i = 0; i<map.length; i++){
-            if(map[i].classList.contains('flag') && map[i].classList.contains('bomb')){
-                correctFlags++
-            }
-            if(correctFlags === numBombs){
-                playerScore = totalSeconds
-                console.log('YOU WIN' + "TIME: "+playerScore)
-                clearInterval(timerVar);
-                
-            }
-        }
-    }
-    //=================================== TIMER ==============================================
-
-    function countTimer() {
-           ++totalSeconds;
-           var hour = Math.floor(totalSeconds /3600);
-           var minute = Math.floor((totalSeconds - hour*3600)/60);
-           var seconds = totalSeconds - (hour*3600 + minute*60);
-           if(hour < 10)
-             hour = "0"+hour;
-           if(minute < 10)
-             minute = "0"+minute;
-           if(seconds < 10)
-             seconds = "0"+seconds;
-           document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
-        }
-    //================================ INITIAL BOARD =========================================
     function initBoard(){
         //place bombs
         var bombMap = Array(numBombs).fill('bomb') //create x amount of bombs
@@ -269,7 +292,20 @@
             }
         })
     }
-
+    
+    function checkWin(){
+        let correctFlags = 0
+        for(let i = 0; i<map.length; i++){
+            if(map[i].classList.contains('flag') && map[i].classList.contains('bomb')){
+                correctFlags++
+            }
+            if(correctFlags === numBombs){
+                console.log('YOU WIN')
+            }
+        }
+    }
+                          
+                          
     })
         
     </script>
