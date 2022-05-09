@@ -106,7 +106,7 @@ body {
 
 
 .bomb{
-    background-color: blue;
+    background-color: grey;
 
     vertical-align: middle;
     align-content:center
