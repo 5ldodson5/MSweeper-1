@@ -26,16 +26,16 @@ public void setUp() throws Exception {
 @Test
 public void testCheckUsernameAndPasswordT() throws Exception {
 	assertEquals(test.checkUsernamePassword("admin", "password"), true);
-	assertEquals(test.checkUsernamePassword("Jim Bob", "jimbob1"), true);
-	assertEquals(test.checkUsernamePassword("Cereal Bowl", "bowlocereal"), true);
+	assertEquals(test.checkUsernamePassword("JimBob", "jimbob1"), true);
+	assertEquals(test.checkUsernamePassword("CerealBowl", "bowlocereal"), true);
 	
 }
 
 
 @Test public void testCheckUsernameAndPasswordF() throws Exception{
 	assertEquals(test.checkUsernamePassword("carl", "huh"), false);
-	assertEquals(test.checkUsernamePassword("Jim bob", "jimbob123"), false);
-	assertEquals(test.checkUsernamePassword("Cereal Bowl", "bowlOFcereal"), false);
+	assertEquals(test.checkUsernamePassword("Jimbob", "jimbob123"), false);
+	assertEquals(test.checkUsernamePassword("CerealBowl", "bowlOFcereal"), false);
 }
 	
 
@@ -44,11 +44,11 @@ public void testCheckUsernameAndPasswordT() throws Exception {
 @Test
 public void testFindallUsers() throws Exception{
 	assertEquals(names.get(5).getUsername(),"admin" );
-	assertEquals(names.get(2).getUsername(),"Jim Bob");
-	assertEquals(names.get(0).getUsername(), "Cereal Bowl");
-	assertEquals(names.get(3).getUsername(), "Pizza Box");
-	assertEquals(names.get(1).getUsername(), "Desk Lamp");
-	assertEquals(names.get(4).getUsername(), "RGB Keyboard");
+	assertEquals(names.get(2).getUsername(),"JimBob");
+	assertEquals(names.get(0).getUsername(), "CerealBowl");
+	assertEquals(names.get(3).getUsername(), "PizzaBox");
+	assertEquals(names.get(1).getUsername(), "DeskLamp");
+	assertEquals(names.get(4).getUsername(), "RGBKeyboard");
 }
 
 @Test
@@ -62,8 +62,8 @@ public void testGetHighScores() throws Exception{
 
 @Test
 public void testUsernameExistsT() throws Exception{
-	assertEquals(test.checkUsernameExists("Jim Bob"), true);
-	assertEquals(test.checkUsernameExists("Pizza Box"), true);
+	assertEquals(test.checkUsernameExists("JimBob"), true);
+	assertEquals(test.checkUsernameExists("PizzaBox"), true);
 	assertEquals(test.checkUsernameExists("admin"), true);
 }
 
