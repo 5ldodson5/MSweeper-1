@@ -28,17 +28,7 @@ body {
 		</c:if>
 		</p></center></h1>
 		
-		
-		<form action="${pageContext.servletContext.contextPath}/index" method="post">
-		
-		<button type="Submit" name="easy">EASY GAME!</button>
-		<br>
-		<button type="Submit" name="medium">MEDIUM GAME!</button>
-		<br>
-		<button type="Submit" name="hard">HARD GAME!</button>
-		
-		</form>
-		
+	
 		
         <a href="http://localhost:8081/MineSweeper/startPage"><h3>SIGN OUT!</h3> </a>
         <br>
