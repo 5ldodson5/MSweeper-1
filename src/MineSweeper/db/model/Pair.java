@@ -1,5 +1,6 @@
 package MineSweeper.db.model;
 
+//Uses code from CS320_LibraryExample_Lab06
 public class Pair<LeftType, RightType> {
 	private LeftType left;
 	private RightType right;

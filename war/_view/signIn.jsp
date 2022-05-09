@@ -5,7 +5,7 @@
 
 <html>
 	<head>
-		<title>Returning User Sign IN</title>
+		<title>Returning User Sign In</title>
 		<style type="text/css">
 		.error {
 			color: red;

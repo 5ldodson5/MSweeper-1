@@ -19,7 +19,7 @@ import MineSweeper.derby.DerbyDatabase;
  */
 public class highScoreController {
 	
-	//Used to populate the index
+	//Used to populate the index page leaderboard.
 	public HttpServletRequest addHighScore(HttpServletRequest req) throws ClassNotFoundException {
 		
 		DerbyDatabase derbyDB = new DerbyDatabase();

@@ -1,5 +1,6 @@
 package MineSweeper.db.model;
 
+//Uses code from CS320_LibraryExample_Lab06, edited to fit this project
 public class HighScore {
 	private int score;
 	private String username;
