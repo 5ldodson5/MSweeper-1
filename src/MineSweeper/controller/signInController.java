@@ -5,6 +5,7 @@ import MineSweeper.derby.DerbyDatabase;
 public class signInController {
 	private String username, password;
 	
+	//Checks to see if a user with the given password exists in the database.
 	public boolean checkUser(String username, String password) {
 		
 		DerbyDatabase derbyDB = new DerbyDatabase();

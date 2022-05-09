@@ -45,6 +45,9 @@ public class SignInServlet extends HttpServlet {
 					signInController controller = new signInController();
 					result = controller.checkUser(username, password);
 					//System.out.println(result);
+					if(result == false) {
+						errorMessage = "Incorrect username or password";
+					}
 				}
 				
 			} catch (NumberFormatException e) {

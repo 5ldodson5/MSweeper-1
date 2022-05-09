@@ -40,12 +40,15 @@ public class SignUpServlet extends HttpServlet {
 				
 
 				if (username == null || password == null) {
-					errorMessage = "Invalid username or password";
+					errorMessage = "Invalid username or password!";
 				}
 				else if(password.equals(passwordCheck)) {
 					signUpController controller = new signUpController();
 					result = controller.checkSignUp(username, password, passwordCheck);
 					//System.out.println(result);
+					if(result==false) {
+						errorMessage = "Username already exists!";
+					}
 				}
 				else {
 					errorMessage = "Passwords don't match!";

@@ -215,16 +215,16 @@ body {
                 if( i> 0 && !isLeftEdge && map[i-1].classList.contains('bomb')){                                //1
                     total++ // NOT index[0] & NOT leftEdge => checkWest (Left)
                 }
-                if( i> (size-1) && !isRightEdge && map[i+1].classList.contains('bomb')){                        //2
+                if( i< (size*size) && !isRightEdge && map[i+1].classList.contains('bomb')){                        //2
                     total++ //checkEast (Right)
                 }
-                if( i> size && map[i-size].classList.contains('bomb')){                                         //3
+                if( i> (size-1) && map[i-size].classList.contains('bomb')){                                         //3
                     total++ //NOT first row , checkNorth
                 }
                 if( i > (size-1) && !isRightEdge && map[i+1-size].classList.contains('bomb')){
                     total++ // checkNorthEast
                 }
-                if( i> (size+1) && !isLeftEdge && map[i-1-size].classList.contains('bomb')){                    //4
+                if( i> (size) && !isLeftEdge && map[i-1-size].classList.contains('bomb')){                    //4
                     total++ // NOT left edge, checkNorthWest 
                 }
                 if( i< (size*size)-1 && map[i].classList.contains('bomb')){                                     //5
