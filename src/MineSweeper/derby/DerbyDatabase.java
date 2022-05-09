@@ -263,9 +263,7 @@ public class DerbyDatabase implements IDatabase {
 		return executeTransaction(new Transaction<Integer>() {
 			@Override
 			public Integer execute(Connection conn) throws SQLException {
-				PreparedStatement stmt1 = null;
-				PreparedStatement stmt2 = null;			
-				ResultSet resultSet2 = null;				
+				PreparedStatement stmt1 = null;			
 				
 				Integer user_id   = -1;
 

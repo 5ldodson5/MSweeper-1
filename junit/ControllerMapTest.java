@@ -15,6 +15,8 @@ public class ControllerMapTest {
 	private Tile[][] Apreset; //what the correct map should be should be 
 	private ControllerMap AMpreset;
 	
+	private ControllerMap basicTest;
+	
 	
 	
 	@Before
@@ -113,7 +115,7 @@ public class ControllerMapTest {
 		
 		
 		
-		
+		basicTest = new ControllerMap(5,15);
 		
 		
 	}
@@ -141,6 +143,24 @@ public class ControllerMapTest {
 	}
 	
 	@Test
+	public void testPlaceBomb() throws Exception{
+		basicTest.placeBombs();
+		Tile[][] test = basicTest.getMap();
+		for(int row = 0; row < 5; row++) {
+			for(int col = 0; col<5; col++) {
+				if(test[row][col].getContains() == 9)
+					assertEquals(test[row][col].getContains(), 9);
+			else 
+				assertEquals(test[row][col].getContains(), 0);
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	@Test
 	public void testWin() throws Exception {
 		for(int row = 0; row<5;row++) {
 			for(int col = 0; col<5;col++) {
@@ -156,5 +176,19 @@ public class ControllerMapTest {
 		assertEquals(test.win(), true);
 		assertEquals(AMpreset.win(),true);
 	}
+	
+	@Test
+	public void testLose() throws Exception{
+		for( int row = 0; row<5 ; row++) {
+			for(int col = 0; col < 5; col ++) {
+				Apreset[row][col].reveal();
+			}
+		}
+		ControllerMap test = new ControllerMap(Apreset);
+		assertEquals(test.checkLose(), true);
+	}
+	
+	
+
 	
 }
